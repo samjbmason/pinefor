@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Maison::Application.load_tasks
+Getgft::Application.load_tasks

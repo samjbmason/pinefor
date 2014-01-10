@@ -1,4 +1,5 @@
-Maison::Application.routes.draw do
+Getgft::Application.routes.draw do
+  resources :gifts
 
   resources :lists
 

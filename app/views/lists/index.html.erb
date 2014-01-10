@@ -1,0 +1,7 @@
+<% if @lists.any? %>
+  <% @lists.each do |list| %>
+  <p><%= list.name %></p>
+  <% end %>
+<% else %>
+  No Lists yet
+<% end %>
