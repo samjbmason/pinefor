@@ -1,6 +1,12 @@
+<%= form_for @list, html: {class: "create-list-form"} do |f| %>
+  <%= f.text_field :name %>
+  <%= f.text_field :natural_due_date %>
+  <%= f.submit "Create List" %>
+<% end %>
+
 <% if @lists.any? %>
   <% @lists.each do |list| %>
-  <p><%= list.name %></p>
+  <p><%= link_to list.name, list %></p>
   <% end %>
 <% else %>
   No Lists yet
