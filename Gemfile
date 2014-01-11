@@ -39,6 +39,9 @@ gem 'jbuilder', '~> 1.2'
 # User Authentication
 gem 'devise'
 
+# Natural Dates
+gem 'chronic'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
