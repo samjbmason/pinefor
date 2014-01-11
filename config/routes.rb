@@ -1,11 +1,16 @@
 Getgft::Application.routes.draw do
-  resources :gifts
 
-  resources :lists
+  resources :lists do
+    resources :gifts
+  end
 
-  devise_for :users
   resources :public
 
+  devise_for :users, :path => ''
+
+  authenticated :user do
+    root 'lists#index', as: :authenticated_root
+  end
 
   root 'pages#welcome'
 end
