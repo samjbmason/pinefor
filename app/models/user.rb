@@ -4,7 +4,9 @@ class User < ActiveRecord::Base
   has_many :lists
   has_many :gifts
 
+  validates :full_name, presence: true
+
   def first_name
-    name.split(' ')[0] if name
+    full_name.split(' ')[0] if full_name
   end
 end
