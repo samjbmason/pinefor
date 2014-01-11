@@ -1,4 +1,5 @@
 class ListsController < ApplicationController
+  before_filter :authenticate_user!
 
   def index
     @lists = List.all
@@ -6,7 +7,7 @@ class ListsController < ApplicationController
   end
 
   def create
-    @list = List.new(list_params)
+    @list = current_user.lists.new(list_params)
 
     if @list.save
       redirect_to @list, notice: 'List was successfully created.'
@@ -16,9 +17,15 @@ class ListsController < ApplicationController
   end
 
   def show
-    @list = List.find(params[:id])
+    @list = current_user.lists.find(params[:id])
     @gift = Gift.new
     @gifts = @list.gifts.all
+  end
+
+  def destroy
+    current_user.lists.find(params[:id]).destroy
+    redirect_to lists_url, notice: 'List was deleted.'
+
   end
 
   private

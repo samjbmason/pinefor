@@ -18,8 +18,11 @@
 
 <% if @gifts.any? %>
 <% @gifts.each do |gift| %>
-  <p><%= gift.name %> - <%= number_to_currency(gift.price, unit: "£") %></p>
+  <p><%= gift.name %> - <%= number_to_currency(gift.price, unit: "£") %> <%= link_to_if(gift.link, 'Buy Now', gift.link ) %></p>
 <% end %>
 <% else %>
  <p>No gifts yet</p>
 <% end %>
+
+
+<p><%= link_to "Delete List", @list, method: :delete, data: { confirm: "You sure?" } %></p>
