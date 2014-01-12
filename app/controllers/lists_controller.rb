@@ -2,7 +2,7 @@ class ListsController < ApplicationController
   before_filter :authenticate_user!
 
   def index
-    @lists = List.all
+    @lists = current_user.lists.all
     @list = List.new
   end
 
