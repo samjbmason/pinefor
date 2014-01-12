@@ -1,11 +1,13 @@
 class ListsController < ApplicationController
   before_filter :authenticate_user!
 
+  # Shows all logged in user lists
   def index
     @lists = current_user.lists.all
     @list = List.new
   end
 
+  # Creates list or redirect back to index page if invalid
   def create
     @list = current_user.lists.new(list_params)
     if @list.save
@@ -15,12 +17,14 @@ class ListsController < ApplicationController
     end
   end
 
+  # Show individual list GET'/list/#id'
   def show
     @list = current_user.lists.find(params[:id])
     @gift = Gift.new
     @gifts = @list.gifts.all
   end
 
+  # Delete list
   def destroy
     current_user.lists.find(params[:id]).destroy
     redirect_to lists_url, notice: 'List was deleted.'
