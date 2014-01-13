@@ -3,4 +3,14 @@ class Gift < ActiveRecord::Base
   belongs_to :user
 
   validates :name, presence: true
+  before_save :add_link_protocol
+
+  private
+
+  # This is a helper that adds http:// to link if one doesnt exist
+  def add_link_protocol
+    unless self.link[/\Ahttp:\/\//] || self.link[/\Ahttps:\/\//]
+      self.link = "http://#{self.link}"
+    end
+  end
 end

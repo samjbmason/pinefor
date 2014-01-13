@@ -18,7 +18,7 @@
 
 <% if @gifts.any? %>
 <% @gifts.each do |gift| %>
-  <p><%= gift.name %> - <%= number_to_currency(gift.price, unit: "£") %> <%= link_to_if(gift.link, 'Buy Now', gift.link ) %></p>
+  <p><%= gift.name %> - <%= number_to_currency(gift.price, unit: "£") %> <%= link_to('Buy Now', gift.link ) unless gift.link.empty?  %></p>
 <% end %>
 <% else %>
  <p>No gifts yet</p>
