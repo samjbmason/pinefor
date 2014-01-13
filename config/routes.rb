@@ -1,10 +1,13 @@
 Getgft::Application.routes.draw do
 
+  get 'shared/:shared_key', to: 'lists#shared', as: :shared
+  put 'shared/:shared_key/gifts/:id', to: 'gifts#update', as: :shared_update
+
   resources :lists do
     resources :gifts
   end
 
-  resources :public
+
 
   devise_for :users, :path => ''
 
