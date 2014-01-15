@@ -6,8 +6,6 @@ class List < ActiveRecord::Base
 
   before_save :create_unique_url
 
-  private
-
   # This creates a unique string then checks if it exists if it does it runs loop again until unique is found
   def create_unique_url
     begin
