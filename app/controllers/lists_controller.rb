@@ -40,6 +40,8 @@ class ListsController < ApplicationController
     elsif current_user == @list.user
         render 'shared_views/owns_list'
     end
+  def public
+    @list = List.find_by public_hash: params[:public_hash]
   end
 
   private

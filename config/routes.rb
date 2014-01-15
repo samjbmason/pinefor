@@ -1,13 +1,11 @@
 Getgft::Application.routes.draw do
 
-  get 'shared/:shared_key', to: 'lists#shared', as: :shared
-  put 'shared/:shared_key/gifts/:id', to: 'gifts#update', as: :shared_update
+  get 'public/:public_hash', to: 'lists#public', as: :public_list
+  put 'public/:public_hash/gifts/:id', to: 'gifts#update', as: :public_gift_update
 
   resources :lists do
     resources :gifts
   end
-
-
 
   devise_for :users, :path => ''
 
@@ -15,5 +13,5 @@ Getgft::Application.routes.draw do
     root 'lists#index', as: :authenticated_root
   end
 
-  root 'pages#welcome'
+  root 'pages#welcome', as: :unauthenticated_root
 end
