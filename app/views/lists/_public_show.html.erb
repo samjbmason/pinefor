@@ -3,6 +3,6 @@
 <% @list.gifts.each do |gift| %>
   <p><%= gift.name %> - <%= number_to_currency(gift.price, unit: "£") %>
   <%= link_to('Buy Now', gift.link ) unless gift.link.empty?  %>
-  <%= link_to('Mark as bought', shared_update_path(@list.shared_key, gift.id), method: :put ) %>
+  <%= link_to('Mark as bought', public_gift_update_path(@list.public_hash, gift.id), method: :put ) %>
   </p>
 <% end %>

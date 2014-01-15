@@ -31,15 +31,6 @@ class ListsController < ApplicationController
   end
 
   # Shared List action for public views
-  def shared
-    @list = List.find_by shared_key: params[:shared_key]
-
-    # Checks if user is logged in and if not shows login form then checks if they own the list they are trying to view
-    if !user_signed_in?
-      render 'shared_views/login'
-    elsif current_user == @list.user
-        render 'shared_views/owns_list'
-    end
   def public
     @list = List.find_by public_hash: params[:public_hash]
   end
