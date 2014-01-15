@@ -1,8 +1,15 @@
 <%= @list.name %>
 
 <% @list.gifts.each do |gift| %>
-  <p><%= gift.name %> - <%= number_to_currency(gift.price, unit: "£") %>
+  <p><%= gift.name %> - <%= number_to_currency(gift.price, unit: "£") %></p>
   <%= link_to('Buy Now', gift.link ) unless gift.link.empty?  %>
-  <%= link_to('Mark as bought', public_gift_update_path(@list.public_hash, gift.id), method: :put ) %>
-  </p>
+
+  <% if gift.user_id.nil? %>
+    <%= link_to('Check as bought', public_gift_update_path(@list.public_hash, gift.id), method: :put ) %>
+  <% elsif gift.user_id == current_user.id %>
+     <%= link_to('Uncheck as bought', public_gift_update_path(@list.public_hash, gift.id), method: :put ) %>
+  <% else %>
+      <p>Someone has already bought this</p>
+  <% end %>
+
 <% end %>

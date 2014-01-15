@@ -12,11 +12,14 @@ class GiftsController < ApplicationController
   end
 
   def update
-    @list = List.find_by shared_key: params[:shared_key]
+    @list = List.find_by public_hash: params[:public_hash]
     @gift = @list.gifts.find(params[:id])
-    if @gift.update(user_id: current_user.id)
-
-      redirect_to shared_path
+    if @gift.user_id.nil?
+      @gift.update(user_id: current_user.id)
+      redirect_to public_list_path, notice: 'Your buying this gift.'
+    else
+      @gift.update(user_id: nil)
+      redirect_to public_list_path, notice: 'Your not buying this gift anymore.'
     end
   end
 

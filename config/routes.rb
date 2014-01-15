@@ -13,5 +13,5 @@ Getgft::Application.routes.draw do
     root 'lists#index', as: :authenticated_root
   end
 
-  root 'pages#welcome', as: :unauthenticated_root
+  root 'pages#welcome'
 end
