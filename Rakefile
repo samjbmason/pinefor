@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Getgft::Application.load_tasks
+Pinefor::Application.load_tasks

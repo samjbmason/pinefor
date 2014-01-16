@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Getgft::Application.config.secret_key_base = 'dc07d985351df7854b33698ec1bbe1e707df0d9884bd98ace2231e5cea9710117539191639162bb1724c0cb50021a4ec24dabf7633d3d58df23bf45f6b6e805b'
+Pinefor::Application.config.secret_key_base = 'dc07d985351df7854b33698ec1bbe1e707df0d9884bd98ace2231e5cea9710117539191639162bb1724c0cb50021a4ec24dabf7633d3d58df23bf45f6b6e805b'

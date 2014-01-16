@@ -1,5 +1,6 @@
 module ApplicationHelper
-  # All of this code allows me to have the account forms as partials in toher views
+
+  # All of this code allows me to have the account forms as partials in other views
   def resource_name
     :user
   end
