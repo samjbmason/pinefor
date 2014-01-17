@@ -1,7 +1,7 @@
 Pinefor::Application.routes.draw do
 
   get 'public/:public_hash', to: 'lists#public', as: :public_list
-  put 'public/:public_hash/gifts/:id', to: 'gifts#update', as: :public_gift_update
+  put 'public/:public_hash/gifts/:id', to: 'gifts#public_update', as: :public_gift_update
 
   resources :lists do
     resources :gifts

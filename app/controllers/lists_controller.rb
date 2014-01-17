@@ -24,10 +24,25 @@ class ListsController < ApplicationController
     @gifts = @list.gifts.all
   end
 
+  # Update List details
+  def update
+    @list = current_user.lists.find(params[:id])
+
+    respond_to do |format|
+      if @list.update_attributes(list_params)
+        format.html { redirect_to @list, :notice => 'User was successfully updated.' }
+        format.json { respond_with_bip(@list) }
+      else
+        format.html { render :show }
+        format.json { respond_with_bip(@list) }
+      end
+    end
+  end
+
   # Delete list
   def destroy
     current_user.lists.find(params[:id]).destroy
-    redirect_to lists_url, notice: 'List was deleted.'
+    redirect_to lists_path, notice: 'List was deleted.'
   end
 
   # Shared List action for public views
