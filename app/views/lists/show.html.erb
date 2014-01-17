@@ -1,27 +1,14 @@
-<%= @list.name %> - <%= @list.natural_due_date %>
+<%= best_in_place @list, :name %> - <%= best_in_place  @list, :natural_due_date %>
 
-<%= form_for [@list, @gift], html: {class: "create-gift-form"} do |f| %>
-  <fieldset>
-    <label>Name:</label>
-    <%= f.text_field :name %>
-  </fieldset>
-  <fieldset>
-    <label>Price:</label>
-    <%= f.text_field :price %>
-  </fieldset>
-  <fieldset>
-    <label>Link:</label>
-    <%= f.text_field :link %>
-  </fieldset>
-  <%= f.submit "Create Gift" %>
-<% end %>
+<%= render 'gifts/form' %>
 
 <% if @gifts.any? %>
-<% @gifts.each do |gift| %>
-  <p><%= gift.name %> - <%= number_to_currency(gift.price, unit: "£") %> <%= link_to('Buy Now', gift.link ) unless gift.link.empty?  %></p>
-<% end %>
+  <% @gifts.each do |gift| %>
+    <%= render 'gifts/single_gift', gift: gift  %>
+  <% end %>
+
 <% else %>
- <p>No gifts yet</p>
+  <p>No gifts yet</p>
 <% end %>
 
 
