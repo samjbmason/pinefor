@@ -4,13 +4,13 @@ class List < ActiveRecord::Base
 
   validates :name, presence: true
 
-  before_save :create_unique_url
+  before_save :create_unique_public_hash
 
   # This creates a unique string then checks if it exists if it does it runs loop again until unique is found
-  def create_unique_url
+  def create_unique_public_hash
     begin
-    self.url = SecureRandom.urlsafe_base64(10)
-    end while self.class.exists?(url: url)
+    self.public_hash = SecureRandom.urlsafe_base64(10)
+    end while self.class.exists?(public_hash: public_hash)
   end
 
   # Getter for easy way to get nice date
