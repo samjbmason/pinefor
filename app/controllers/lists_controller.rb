@@ -52,6 +52,6 @@ class ListsController < ApplicationController
 
   private
   def list_params
-    params.require(:list).permit(:name, :natural_due_date)
+    params.require(:list).permit(:name, :human_due_date)
   end
 end

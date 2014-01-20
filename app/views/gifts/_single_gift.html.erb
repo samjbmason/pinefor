@@ -1,3 +1,4 @@
 <p><%= best_in_place gift, :name, :path => list_gift_path(@list, gift) %> - <%= number_to_currency(best_in_place(gift, :price, :path => list_gift_path(@list, gift)), unit: "£") unless gift.price.nil? %> <%= link_to('Buy Now', gift.link ) unless gift.link.empty?  %>
+<%= best_in_place gift, :link, :path => list_gift_path(@list, gift), :display_as => :get_domain %>
     <%= link_to "Delete Gift", [@list, gift], method: :delete, data: { confirm: "You sure?" } %>
 </p>

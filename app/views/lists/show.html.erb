@@ -1,4 +1,4 @@
-<%= best_in_place @list, :name %> - <%= best_in_place  @list, :natural_due_date %>
+<%= best_in_place @list, :name %> - <%= best_in_place  @list, :human_due_date, :display_as => :nice_date_format %>
 
 <%= render 'gifts/form' %>
 

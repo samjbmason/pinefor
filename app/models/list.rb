@@ -13,13 +13,18 @@ class List < ActiveRecord::Base
     end while self.class.exists?(public_hash: public_hash)
   end
 
-  # Getter for easy way to get nice date
-  def natural_due_date
-    due_date.strftime('%d/%m/%Y') if due_date
+  # Getter for date (needed for best in place)
+  def human_due_date
+    due_date
   end
 
   # Setter to convert nice date to db save-able date format
-  def natural_due_date=(date)
+  def human_due_date=(date)
     self.due_date = Chronic.parse(date) if date.present?
+  end
+
+  # Formats the human due_date into a format of my choosing
+  def nice_date_format
+    self.human_due_date.strftime('%d/%m/%Y')
   end
 end
