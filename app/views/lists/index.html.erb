@@ -1,13 +1,37 @@
 <%= form_for @list, html: {class: "create-list-form"} do |f| %>
-  <%= f.text_field :name %>
-  <%= f.text_field :human_due_date %>
+  <div class="inline-field-form">
+    <p>I want to create a list for
+    <%= f.text_field :name %>
+    on the
+    <%= f.text_field :human_due_date %>
+    </p>
+  </div> <!--  .inline-field-form -->
   <%= f.submit "Create List" %>
 <% end %>
 
+<section class="all-lists">
+  <h2>Your lists</h2>
+
 <% if @lists.any? %>
   <% @lists.each do |list| %>
-  <p><%= link_to list.name, list_path(list) %></p>
+  <div class="single-list">
+      <p><%= link_to list.name, list_path(list), css: 'single-list-link' %>
+        <span class="gift-count"><%= pluralize(list.gifts.count, 'gift') %></span>
+      </p>
+  </div> <!--  .single-list -->
   <% end %>
 <% else %>
-  No Lists yet
+  <p class="no-data">You haven’t created any lists yet</p>
 <% end %>
+</section>
+
+<section class="gifts-buying">
+  <h2>Gifts your buying</h2>
+<% if @gifts.any? %>
+  <% @gifts.each do |gift| %>
+    <%= link_to gift.name, gift.list %>
+  <% end %>
+<% else %>
+  <p class="no-data">You haven’t bought any gifts yet</p>
+<% end %>
+</section> <!--  .gifts-buying -->

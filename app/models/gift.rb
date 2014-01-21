@@ -6,7 +6,6 @@ class Gift < ActiveRecord::Base
   validates :price, numericality: true, allow_nil: true
   before_save :add_link_protocol
 
-  private
 
   # This is a helper that adds http:// to link if one doesnt exist
   def add_link_protocol

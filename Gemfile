@@ -43,9 +43,6 @@ gem 'devise'
 # Natural Dates
 gem 'chronic'
 
-# Inline Editing
-gem 'best_in_place', github: "bernat/best_in_place"
-
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

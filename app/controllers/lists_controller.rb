@@ -4,8 +4,9 @@ class ListsController < ApplicationController
 
   # Shows all logged in user lists
   def index
-    @lists = current_user.lists.order('created_at desc')
-    @list = List.new
+    @lists  = current_user.lists.order('created_at desc')
+    @list   = List.new
+    @gifts  = current_user.gifts.all
   end
 
   # Creates list or redirect back to index page if invalid
@@ -20,20 +21,16 @@ class ListsController < ApplicationController
 
   # Show individual list GET'/list/#id'
   def show
-    @gift = Gift.new
-    @gifts = @list.gifts.all
+    @gift   = Gift.new
+    @gifts  = @list.gifts.all
   end
 
   # Update List details
   def update
-    respond_to do |format|
-      if @list.update_attributes(list_params)
-        format.html { redirect_to @list, :notice => 'User was successfully updated.' }
-        format.json { respond_with_bip(@list) }
-      else
-        format.html { render :show }
-        format.json { respond_with_bip(@list) }
-      end
+    if @list.update_attributes(list_params)
+      redirect_to @list, :notice => 'List was successfully updated.'
+    else
+      render :show
     end
   end
 

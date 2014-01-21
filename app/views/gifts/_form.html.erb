@@ -1,15 +1,6 @@
 <%= form_for [@list, @gift], html: {class: "create-gift-form"} do |f| %>
-  <fieldset>
-    <label>Name:</label>
-    <%= f.text_field :name %>
-  </fieldset>
-  <fieldset>
-    <label>Price:</label>
-    <%= f.text_field :price %>
-  </fieldset>
-  <fieldset>
-    <label>Link:</label>
-    <%= f.text_field :link %>
-  </fieldset>
+  <div class="inline-field-form">
+    <p>I’m pining for a <%= f.text_field :name %> it can be bought here <%= f.text_field :link %></p>
+  </div>
   <%= f.submit "Create Gift" %>
 <% end %>

@@ -1,4 +1,13 @@
-<p><%= best_in_place gift, :name, :path => list_gift_path(@list, gift) %> - <%= number_to_currency(best_in_place(gift, :price, :path => list_gift_path(@list, gift)), unit: "£") unless gift.price.nil? %> <%= link_to('Buy Now', gift.link ) unless gift.link.empty?  %>
-<%= best_in_place gift, :link, :path => list_gift_path(@list, gift), :display_as => :get_domain %>
-    <%= link_to "Delete Gift", [@list, gift], method: :delete, data: { confirm: "You sure?" } %>
-</p>
+<div class="single-gift-container js-gift-container">
+  <div class="gift-details js-gift-details">
+    <p>
+      <%= gift.name %>
+      <%= gift.get_domain %>
+      <%= link_to "", gift.link, class: 'link-updates link-btn' %>
+      <%= link_to "", [@list, gift], method: :delete, class: 'delete-btn', data: { confirm: "You sure?" } %>
+    </p>
+  </div> <!--  .gift-details js-gift-details -->
+
+  <%= render'gifts/edit_form', gift: gift %>
+
+</div> <!--  .single-gift -->

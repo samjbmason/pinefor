@@ -15,19 +15,13 @@ class List < ActiveRecord::Base
 
   # Getter for date (needed for best in place)
   def human_due_date
-    due_date
+    due_date.strftime('%d/%m/%Y')
   end
 
   # Setter to convert nice date to db save-able date format
   def human_due_date=(date)
     self.due_date = Chronic.parse(date) if date.present?
   end
-
-  # Formats the human due_date into a format of my choosing
-  def nice_date_format
-    self.human_due_date.strftime('%d/%m/%Y')
-  end
-
 
   def to_param
     "#{id}-#{name.parameterize}"

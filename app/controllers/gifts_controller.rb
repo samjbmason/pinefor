@@ -14,14 +14,10 @@ class GiftsController < ApplicationController
   def update
     @list = List.find(params[:list_id])
     @gift = @list.gifts.find(params[:id])
-    respond_to do |format|
-      if @gift.update_attributes(gift_params)
-        format.html { redirect_to @list, :notice => 'Gift was successfully updated.' }
-        format.json { respond_with_bip(@gift) }
-      else
-        format.html { redirect_to @list }
-        format.json { respond_with_bip(@gift) }
-      end
+    if @gift.update_attributes(gift_params)
+      redirect_to @list, :notice => 'Gift was successfully updated.'
+    else
+      redirect_to @list
     end
   end
 
