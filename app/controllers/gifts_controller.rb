@@ -1,8 +1,8 @@
 class GiftsController < ApplicationController
   before_filter :authenticate_user!
+  before_action :find_list, only: [:create, :update, :destroy]
 
   def create
-    @list = List.find(params[:list_id])
     @gift = @list.gifts.new(gift_params)
     if @gift.save
       redirect_to @list, notice: 'Gift was successfully added.'
@@ -12,7 +12,6 @@ class GiftsController < ApplicationController
   end
 
   def update
-    @list = List.find(params[:list_id])
     @gift = @list.gifts.find(params[:id])
     if @gift.update_attributes(gift_params)
       redirect_to @list, :notice => 'Gift was successfully updated.'
@@ -22,7 +21,6 @@ class GiftsController < ApplicationController
   end
 
   def destroy
-    @list = List.find(params[:list_id])
     @list.gifts.find(params[:id]).destroy
     redirect_to @list, notice: 'List was deleted.'
   end
@@ -42,6 +40,10 @@ class GiftsController < ApplicationController
   private
   def gift_params
     params.require(:gift).permit(:name, :price, :link)
+  end
+
+  def find_list
+    @list = List.find(params[:list_id])
   end
 
 end
