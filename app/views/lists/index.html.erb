@@ -6,7 +6,7 @@
 
 <% if @lists.any? %>
   <% @lists.each do |list| %>
-  <p><%= link_to list.name, list %></p>
+  <p><%= link_to list.name, list_path(list) %></p>
   <% end %>
 <% else %>
   No Lists yet

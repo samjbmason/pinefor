@@ -1,9 +1,10 @@
 class ListsController < ApplicationController
   before_filter :authenticate_user!, except: :shared
+  before_action :find_list, only: [:show, :update, :destroy]
 
   # Shows all logged in user lists
   def index
-    @lists = current_user.lists.all
+    @lists = current_user.lists.order('created_at desc')
     @list = List.new
   end
 
@@ -13,21 +14,18 @@ class ListsController < ApplicationController
     if @list.save
       redirect_to @list, notice: 'List was successfully created.'
     else
-      redirect_to lists_url, alert: 'List was not created, try again.'
+      redirect_to root_path, alert: 'List was not created, try again.'
     end
   end
 
   # Show individual list GET'/list/#id'
   def show
-    @list = current_user.lists.find(params[:id])
     @gift = Gift.new
     @gifts = @list.gifts.all
   end
 
   # Update List details
   def update
-    @list = current_user.lists.find(params[:id])
-
     respond_to do |format|
       if @list.update_attributes(list_params)
         format.html { redirect_to @list, :notice => 'User was successfully updated.' }
@@ -41,8 +39,8 @@ class ListsController < ApplicationController
 
   # Delete list
   def destroy
-    current_user.lists.find(params[:id]).destroy
-    redirect_to lists_path, notice: 'List was deleted.'
+    @list.destroy
+    redirect_to root_path, notice: 'List was deleted.'
   end
 
   # Shared List action for public views
@@ -53,5 +51,9 @@ class ListsController < ApplicationController
   private
   def list_params
     params.require(:list).permit(:name, :human_due_date)
+  end
+
+  def find_list
+    @list = current_user.lists.find(params[:id])
   end
 end

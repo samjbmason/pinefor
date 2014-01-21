@@ -27,4 +27,9 @@ class List < ActiveRecord::Base
   def nice_date_format
     self.human_due_date.strftime('%d/%m/%Y')
   end
+
+
+  def to_param
+    "#{id}-#{name.parameterize}"
+  end
 end
