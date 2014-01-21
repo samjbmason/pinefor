@@ -7,11 +7,11 @@
 
   <nav class="user-controls">
     <% if user_signed_in? %>
-      <%= link_to 'Profile', edit_user_registration_path %>
+      <%= nav_link 'Profile', edit_user_registration_path %>
       <%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
     <% else %>
-      <%= link_to 'Sign in', new_user_session_path  %>
-      <%= link_to 'Sign up', new_user_registration_path  %>
+      <%= nav_link 'Sign in', new_user_session_path  %>
+      <%= nav_link 'Sign up', new_user_registration_path  %>
     <% end %>
   </nav> <!--  .user-controls -->
 </header>
