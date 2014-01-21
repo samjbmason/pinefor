@@ -1,0 +1,5 @@
+<%= form_for @list, html: {class: "update-list-form js-list-edit"} do |f| %>
+  <%= f.text_field :name %>
+  <%= f.text_field :human_due_date %>
+  <%= f.submit "Update List" %>
+<% end %>
