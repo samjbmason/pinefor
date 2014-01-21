@@ -1,0 +1,5 @@
+<%= form_for [@list, gift], html: {class: "update-gift-form js-gift-edit"} do |f| %>
+  <%= f.text_field :name %>
+  <%= f.text_field :link %>
+  <%= f.submit "Update Gift" %>
+<% end %>
