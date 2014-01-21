@@ -1,0 +1,40 @@
+html {
+  font-family: $whitney;
+  font-weight: 400;
+  font-style: normal;
+  color: $alpha-c;
+  background: #ffffff;
+  font-size: 18px;
+}
+
+.site-header,
+.flash,
+.content-container {
+  @include outer-container;
+}
+
+header {
+  height: 56px;
+  margin: 21px 0;
+}
+
+h1 {
+  float: left;
+  line-height: 56px;
+}
+
+.user-controls {
+  float: right;
+  a {
+    @include inline-block;
+    line-height: 56px;
+    margin-left: 18px;
+    text-transform: lowercase;
+    letter-spacing: -1px;
+  }
+}
+
+.all-lists,
+.all-gifts {
+  @include span-columns(6);
+}

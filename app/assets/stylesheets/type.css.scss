@@ -1,5 +1,30 @@
-html {
-  font-family: $whitney;
-  font-weight: 400;
+h1 {
+  font-family: 'Archer SSm A', 'Archer SSm B';
+  font-weight: 800;
   font-style: normal;
+  font-size: 46px;
+  span {
+    font-weight: 400;
+  }
+  a {
+    color: inherit;
+    &:hover {
+      color: #415C71;
+    }
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: 600;
+  @include transition (color 0.2s ease-in);
+  &:hover {
+    color: #46c8c8;
+  }
+}
+
+h2 {
+  font-size: 21px;
+  margin-bottom: 18px;
 }
