@@ -15,7 +15,7 @@ class List < ActiveRecord::Base
 
   # Getter for date (needed for best in place)
   def human_due_date
-    due_date.strftime('%d/%m/%Y')
+    due_date.strftime('%d/%m/%Y') if due_date
   end
 
   # Setter to convert nice date to db save-able date format
