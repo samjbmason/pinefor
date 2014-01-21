@@ -1,13 +1,4 @@
-<%= form_for @list, html: {class: "create-list-form"} do |f| %>
-  <div class="inline-field-form">
-    <p>I want to create a list for
-    <%= f.text_field :name %>
-    on the
-    <%= f.text_field :human_due_date %>
-    </p>
-  </div> <!--  .inline-field-form -->
-  <%= f.submit "Create List" %>
-<% end %>
+<%= render'new_form' %>
 
 <section class="all-lists">
   <h2>Your lists</h2>

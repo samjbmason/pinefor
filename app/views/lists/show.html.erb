@@ -5,11 +5,7 @@
     <a href="#" class="js-show-meta-form">Edit Details</a>
   </div> <!--  .list-details -->
 
-  <%= form_for @list, html: {class: "update-list-form js-list-edit"} do |f| %>
-      <%= f.text_field :name %>
-      <%= f.text_field :human_due_date %>
-    <%= f.submit "Update List" %>
-  <% end %>
+  <%= render'edit_form' %>
 
 </section> <!--  .list-meta -->
 
