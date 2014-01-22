@@ -1,28 +1,30 @@
-<%= render'new_form' %>
+<div class="content-container">
+  <%= render'new_form' %>
 
-<section class="all-lists">
-  <h2>Your lists</h2>
+  <section class="all-lists">
+    <h2>Your lists</h2>
 
-<% if @lists.any? %>
-  <% @lists.each do |list| %>
-  <div class="single-list">
-      <p><%= link_to list.name, list_path(list), css: 'single-list-link' %>
-        <span class="gift-count"><%= pluralize(list.gifts.count, 'gift') %></span>
-      </p>
-  </div> <!--  .single-list -->
+  <% if @lists.any? %>
+    <% @lists.each do |list| %>
+    <div class="single-list">
+        <p><%= link_to list.name, list_path(list), css: 'single-list-link' %>
+          <span class="gift-count"><%= pluralize(list.gifts.count, 'gift') %></span>
+        </p>
+    </div> <!--  .single-list -->
+    <% end %>
+  <% else %>
+    <p class="no-data">You haven’t created any lists yet</p>
   <% end %>
-<% else %>
-  <p class="no-data">You haven’t created any lists yet</p>
-<% end %>
-</section>
+  </section>
 
-<section class="gifts-buying">
-  <h2>Gifts your buying</h2>
-<% if @gifts.any? %>
-  <% @gifts.each do |gift| %>
-    <%= link_to gift.name, gift.list %>
+  <section class="gifts-buying">
+    <h2>Gifts your buying</h2>
+  <% if @gifts.any? %>
+    <% @gifts.each do |gift| %>
+      <%= link_to gift.name, gift.list %>
+    <% end %>
+  <% else %>
+    <p class="no-data">You haven’t bought any gifts yet</p>
   <% end %>
-<% else %>
-  <p class="no-data">You haven’t bought any gifts yet</p>
-<% end %>
-</section> <!--  .gifts-buying -->
+  </section> <!--  .gifts-buying -->
+</div>

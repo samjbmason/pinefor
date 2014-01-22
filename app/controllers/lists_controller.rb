@@ -28,7 +28,7 @@ class ListsController < ApplicationController
   # Update List details
   def update
     if @list.update_attributes(list_params)
-      redirect_to @list, :notice => 'List was successfully updated.'
+      redirect_to @list, notice: 'List was successfully updated.'
     else
       render :show
     end

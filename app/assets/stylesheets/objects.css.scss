@@ -1,7 +1,7 @@
 .feature-form {
   width: 100%;
   font-size: 29px;
-  background: #f3f1ec;
+  background: #eeeeee;
   padding: 13px;
   margin-bottom: 21px;
   input[type=text] {
@@ -18,17 +18,63 @@ input[type="password"] {
   border: none;
   background: transparent;
   outline: none;
-  border-bottom: 1px dashed $alpha-c;
+  border-bottom: 2px dashed $primary-c;
 }
 
 input[type="submit"],
-button {
+button,
+.btn {
   font-family: $whitney;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 18px;
   background: transparent;
   border: 2px solid $alpha-c;
+  color: $alpha-c;
   padding: 8px 13px;
   margin-top: 18px;
   text-transform: lowercase;
+  cursor: pointer;
+  text-shadow: none;
+  @include transition (all 0.2s linear);
+  outline: none;
+  border-radius: 2px;
+  &:hover {
+    color: tint($alpha-c, 35%);
+  }
+  &.btn-primary {
+    border: 2px solid $primary-c;
+    color: $primary-c;
+    &:hover {
+      color: tint($primary-c, 35%);
+    }
+  }
+  &.btn-warning {
+    border: 2px solid $warning-c;
+    color: $warning-c;
+    &:hover {
+      color: tint($warning-c, 35%);
+    }
+  }
+  &.btn-success {
+    border: 2px solid $success-c;
+    color: $success-c;
+    &:hover {
+      color: tint($success-c, 35%);
+    }
+  }
 }
+
+.btn-block {
+  display: inline-block;
+  color: $beta-c !important;
+  &.btn-success {
+    background: $success-c;
+    &:hover {
+      color: $beta-c;
+      background: shade($success-c, 11%);
+      border-color: shade($success-c, 11%);
+    }
+  }
+
+}
+

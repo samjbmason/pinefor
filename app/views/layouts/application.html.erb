@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8">
   <title>Pine For</title>
   <link rel="stylesheet" type="text/css" href="//cloud.typography.com/6776652/634764/css/fonts.css" />
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
@@ -9,15 +10,18 @@
 </head>
 <body>
 
-  <%= render '/layouts/header' %>
+  <%= render'/layouts/header' %>
 
-  <% flash.each do |name, msg| %>
-    <%= content_tag :div, msg, class: [name, 'flash'] %>
-  <% end %>
-
-  <div class="content-container">
-    <%= yield %>
+  <div class="container">
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, class: [name, 'flash'] %>
+    <% end %>
   </div>
+
+  <%= yield %>
+
+
+  <%= render'/layouts/footer' %>
 
 </body>
 </html>

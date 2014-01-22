@@ -1,18 +1,21 @@
 <header class="site-header" role="banner">
-  <h1 class="site-name">
-    <%= link_to root_path do %>
-    Pine<span class="bold">for</span>
-    <% end %>
-  </h1>
+  <div class="container">
+    <h1 class="site-name">
+      <%= link_to root_path do %>
+      Pine<span class="bold">for</span>
+      <span class="beta-label">beta</span>
+      <% end %>
+    </h1>
 
-  <nav class="user-controls">
-    <% if user_signed_in? %>
-      <%= nav_link 'Profile', edit_user_registration_path %>
-      <%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
-    <% else %>
-      <%= nav_link 'Sign in', new_user_session_path  %>
-      <%= nav_link 'Sign up', new_user_registration_path  %>
-    <% end %>
-  </nav> <!--  .user-controls -->
+    <nav class="user-controls">
+      <% if user_signed_in? %>
+        <%= nav_link 'Profile', edit_user_registration_path %>
+        <%= link_to 'Sign out', destroy_user_session_path, class: "btn btn-warning", method: :delete %>
+      <% else %>
+        <%= link_to 'Sign in', new_user_session_path, class: "btn btn-primary"  %>
+        <%= link_to 'Sign up', new_user_registration_path, class: "btn btn-success"  %>
+      <% end %>
+    </nav> <!--  .user-controls -->
+  </div> <!--  .container -->
 </header>
 

@@ -1,7 +1,7 @@
 <%= form_for @list, html: {class: "create-list-form feature-form"} do |f| %>
   <div class="inline-field-form">
     <p>I want to create a list for
-    <%= f.text_field :name, placeholder: "My Birthday" %>
+    <%= f.text_field :name, placeholder: "My Birthday", autofocus: true %>
     on the
     <%= f.text_field :human_due_date, placeholder: "10th Jan 2014" %>
     </p>

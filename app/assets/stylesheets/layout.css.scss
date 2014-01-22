@@ -2,20 +2,31 @@ html {
   font-family: $whitney;
   font-weight: 400;
   font-style: normal;
-  color: $alpha-c;
-  background: #ffffff;
   font-size: 18px;
+  line-height: 1.4;
+  color: $alpha-c;
+  background: $beta-c;
 }
 
-.site-header,
-.flash,
+.container,
 .content-container {
   @include outer-container;
+  position: relative;
+}
+
+.content-container {
+  margin-top: 21px;
 }
 
 header {
-  height: 56px;
-  margin: 21px 0;
+  padding: 11px 0;
+  background: #4C5364;
+  .container {
+    height: 56px;
+  }
+  a {
+    color: $beta-c;
+  }
 }
 
 h1 {
@@ -26,15 +37,41 @@ h1 {
 .user-controls {
   float: right;
   a {
-    @include inline-block;
     line-height: 56px;
     margin-left: 18px;
     text-transform: lowercase;
-    letter-spacing: -1px;
+    font-weight: 400;
   }
 }
 
 .all-lists,
 .all-gifts {
   @include span-columns(6);
+}
+
+footer {
+  font-size: 11px;
+  padding: 21px 0;
+  .made-by {
+    float: left;
+  }
+  small {
+    float: right;
+
+  }
+}
+
+.flash {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  width: 100%;
+  font-size: 13px;
+  padding: 11px;
+  border-radius: 4px;
+  color: $beta-c;
+  &.notice {
+    background: $primary-c;
+  }
 }

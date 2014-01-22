@@ -1,27 +1,29 @@
-<section class="list-meta js-meta-container">
-  <div class="list-details js-list-details">
-    <h2><%= @list.name %></h2>
-    <time><%= @list.human_due_date %></time>
-    <a href="#" class="js-show-meta-form">Edit Details</a>
-  </div> <!--  .list-details -->
+<div class="content-container">
+  <section class="list-meta js-meta-container">
+    <div class="list-details js-list-details">
+      <h2><%= @list.name %></h2>
+      <time><%= @list.human_due_date %></time>
+      <a href="#" class="js-show-meta-form">Edit Details</a>
+    </div> <!--  .list-details -->
 
-  <%= render'edit_form' %>
+    <%= render'edit_form' %>
 
-</section> <!--  .list-meta -->
+  </section> <!--  .list-meta -->
 
-<%= render 'gifts/form' %>
+  <%= render 'gifts/form' %>
 
-<section class="all-gifts">
-  <h2>All gifts</h2>
-<% if @gifts.any? %>
-  <% @gifts.each do |gift| %>
-    <%= render 'gifts/single_gift', gift: gift  %>
+  <section class="all-gifts">
+    <h2>All gifts</h2>
+  <% if @gifts.any? %>
+    <% @gifts.each do |gift| %>
+      <%= render 'gifts/single_gift', gift: gift  %>
+    <% end %>
+  <% else %>
+    <p>No gifts yet</p>
   <% end %>
-<% else %>
-  <p>No gifts yet</p>
-<% end %>
-</section>
+  </section>
 
 
 
-<p><%= link_to "Delete List", @list, method: :delete, data: { confirm: "You sure?" } %></p>
+  <p><%= link_to "Delete List", @list, method: :delete, data: { confirm: "You sure?" } %></p>
+</div>
