@@ -1,11 +1,19 @@
+form {
+  margin-bottom: 21px;
+  i {
+    font-size: 13px;
+  }
+}
+
 .feature-form {
   width: 100%;
   font-size: 29px;
   background: #eeeeee;
   padding: 13px;
-  margin-bottom: 21px;
-  input[type=text] {
+
+  input[type="text"] {
     font-size: 29px;
+    font-weight: 600;
     max-width: 200px;
   }
 }
@@ -14,11 +22,16 @@ input[type="text"],
 input[type="email"],
 input[type="password"] {
   font-family: $whitney;
-  font-weight: 600;
+  font-weight: 400;
+  font-size: 18px;
   border: none;
   background: transparent;
   outline: none;
   border-bottom: 2px dashed $primary-c;
+  @include transition (border-color 0.2s ease-in);
+  &:focus {
+    border-color: shade($primary-c, 30%);
+  }
 }
 
 input[type="submit"],
@@ -31,37 +44,43 @@ button,
   border: 2px solid $alpha-c;
   color: $alpha-c;
   padding: 8px 13px;
-  margin-top: 18px;
   text-transform: lowercase;
   cursor: pointer;
   text-shadow: none;
+  display: inline-block;
+  text-decoration: none;
   @include transition (all 0.2s linear);
   outline: none;
   border-radius: 2px;
   &:hover {
-    color: tint($alpha-c, 35%);
+    color: tint($alpha-c, 21%);
   }
   &.btn-primary {
     border: 2px solid $primary-c;
     color: $primary-c;
     &:hover {
-      color: tint($primary-c, 35%);
+      color: tint($primary-c, 21%);
     }
   }
   &.btn-warning {
     border: 2px solid $warning-c;
     color: $warning-c;
     &:hover {
-      color: tint($warning-c, 35%);
+      color: tint($warning-c, 21%);
     }
   }
   &.btn-success {
     border: 2px solid $success-c;
     color: $success-c;
     &:hover {
-      color: tint($success-c, 35%);
+      color: tint($success-c, 21%);
     }
   }
+}
+
+
+.user-controls .btn {
+  display: inline;
 }
 
 .btn-block {
@@ -78,3 +97,26 @@ button,
 
 }
 
+.new_user,
+.edit_user {
+  label {
+    font-size: 18px;
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    margin-bottom: 18px
+  }
+}
+
+.user-links {
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.remember-me {
+  label {
+    font-size: 13px;
+  }
+}
