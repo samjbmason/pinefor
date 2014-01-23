@@ -9,7 +9,7 @@
 
     <nav class="user-controls">
       <% if user_signed_in? %>
-        <%= nav_link 'Profile', edit_user_registration_path %>
+        <%= link_to 'Profile', edit_user_registration_path, class: "btn btn-primary" %>
         <%= link_to 'Sign out', destroy_user_session_path, class: "btn btn-warning", method: :delete %>
       <% else %>
         <%= link_to 'Sign in', new_user_session_path, class: "btn btn-primary"  %>
