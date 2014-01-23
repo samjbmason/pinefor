@@ -74,6 +74,11 @@ footer {
   &.notice {
     background: $primary-c;
   }
+  &.alert {
+    background: $warning-c;
+  }
+}
+
 .half-width {
   @include shift(2);
   @include span-columns(8);
