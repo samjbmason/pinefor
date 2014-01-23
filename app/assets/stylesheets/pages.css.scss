@@ -10,7 +10,8 @@
   text-align: center;
 
   h2 {
-    font-family: 'Archer SSm A', 'Archer SSm B';
+    font-family: $archer;
+    font-weight: 400;
     font-size: 47px;
     margin-top: 56px;
   }

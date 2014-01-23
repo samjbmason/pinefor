@@ -46,22 +46,31 @@ strong {
 
 a {
   color: inherit;
-  text-decoration: none;
-  font-weight: 600;
+  text-decoration: underline;
+  font-weight: 400;
   @include transition (color 0.2s ease-in);
   &:hover {
     color: $primary-c;
   }
 }
 
+p {
+  margin-bottom: 18px;
+}
+
 
 h1 {
-  font-family: 'Archer SSm A', 'Archer SSm B';
-  font-weight: 800;
-  font-style: normal;
-  font-size: 46px;
   position: relative;
   padding-left: 50px;
+  a {
+    font-family: $archer;
+    font-weight: 700;
+    color: inherit;
+    font-style: normal;
+    font-size: 46px;
+    text-decoration: none;
+  }
+
   &:before {
     content: '';
     position: absolute;
@@ -74,24 +83,24 @@ h1 {
   span {
     font-weight: 400;
   }
-  a {
-    color: inherit;
-  }
 }
 
 h2 {
-  font-size: 21px;
-  margin-bottom: 18px;
+  font-family: $archer;
+  font-size: 34px;
+  font-weight: 400;
+  margin-bottom: 29px;
 }
 
 h3 {
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 21px;
+  font-weight: 400;
+  margin-bottom: 18px;
 }
 
 .beta-label {
   position: absolute;
-  bottom: -6px;
+  bottom: 5px;
   right: 38px;
   font-family: $whitney;
   font-weight: 400;
