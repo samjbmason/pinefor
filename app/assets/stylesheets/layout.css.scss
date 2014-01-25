@@ -64,6 +64,10 @@ header {
   @include span-columns(6);
 }
 
+.gifts-buying {
+  text-align: right;
+}
+
 .centered {
   @include shift(2);
   @include span-columns(8);
