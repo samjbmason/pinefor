@@ -23,6 +23,7 @@
    List meta info
    ========================================================================== */
 .list-meta {
+
   &.open {
     .js-list-details {
       display: none;
@@ -39,27 +40,5 @@
   }
   .js-show-meta-form {
     float: right;
-  }
-}
-
-
-
-/* ==========================================================================
-   List Edit Form
-   ========================================================================== */
-.update-list-form {
-  display: none;
-
-  .inline-fields {
-    @include inline-block;
-    width: 40%;
-    margin-right: 21px;
-  }
-  label {
-    font-size: 13px;
-    display: block;
-  }
-  input[type="text"] {
-    width: 100%;
   }
 }
