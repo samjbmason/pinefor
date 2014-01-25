@@ -4,10 +4,11 @@
       <%= gift.name %>
       <%= gift.get_domain %>
       <%= link_to "", gift.link, class: 'link-updates link-btn' %>
+      <a href="#" class="btn btn-primary js-show-gift-meta-form">Edit</a>
       <%= link_to "", [@list, gift], method: :delete, class: 'delete-btn', data: { confirm: "You sure?" } %>
     </p>
   </div> <!--  .gift-details js-gift-details -->
 
   <%= render'gifts/edit_form', gift: gift %>
 
-</div> <!--  .single-gift -->
+</div> <!--  .single-gift-container -->
