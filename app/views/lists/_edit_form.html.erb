@@ -9,4 +9,8 @@
     <%= f.text_field :human_due_date %>
   </fieldset>
 
+  <fieldset class="btn-group">
+    <%= f.submit "Update List", class: "btn btn-success" %>
+    <a href="#" class="btn btn-warning js-close-list-edit">Cancel</a>
+  </fieldset>
 <% end %>
