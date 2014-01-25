@@ -3,7 +3,9 @@
    ========================================================================== */
 form {
   margin-bottom: 21px;
+  p {
     font-size: 13px;
+    margin-bottom: 21px;
   }
   i {
     color: tint($alpha-c, 39%);
