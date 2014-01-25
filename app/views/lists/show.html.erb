@@ -1,5 +1,6 @@
 <div class="content-container">
   <section class="list-meta js-meta-container">
+
     <div class="list-details js-list-details">
       <h2><%= @list.name %></h2>
       <a href="#" class="js-show-meta-form">Edit Details</a>
@@ -14,13 +15,13 @@
 
   <section class="all-gifts">
     <h2>All gifts</h2>
-  <% if @gifts.any? %>
-    <% @gifts.each do |gift| %>
-      <%= render 'gifts/single_gift', gift: gift  %>
+    <% if @gifts.any? %>
+      <% @gifts.each do |gift| %>
+        <%= render'gifts/single_gift', gift: gift  %>
+      <% end %>
+    <% else %>
+      <p>No gifts yet</p>
     <% end %>
-  <% else %>
-    <p>No gifts yet</p>
-  <% end %>
   </section>
 
 
