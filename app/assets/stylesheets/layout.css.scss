@@ -86,8 +86,4 @@ footer {
   small {
     float: right;
   }
-
-.half-width {
-  @include shift(2);
-  @include span-columns(8);
 }
