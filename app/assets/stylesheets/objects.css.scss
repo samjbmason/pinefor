@@ -121,10 +121,11 @@ button,
     background: $success-c;
     &:hover {
       color: $beta-c;
-      background: shade($success-c, 11%);
-      border-color: shade($success-c, 11%);
+      background: shade($success-c, 21%);
+      border-color: shade($success-c, 21%);
     }
   }
+}
 
 }
 
