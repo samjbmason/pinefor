@@ -49,6 +49,17 @@ h1 {
     margin-left: 18px;
     text-transform: lowercase;
     font-weight: 400;
+    display: inline;
+
+    &.btn-primary:hover {
+      color: tint($primary-c, 21%);
+    }
+    &.btn-success:hover {
+      color: tint($success-c, 21%);
+    }
+    &.btn-warning:hover {
+      color: tint($warning-c, 21%);
+    }
   }
 }
 

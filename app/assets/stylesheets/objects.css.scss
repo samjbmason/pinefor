@@ -56,27 +56,27 @@ button,
   outline: none;
   border-radius: 2px;
   &:hover {
-    color: tint($alpha-c, 21%);
+    color: shade($alpha-c, 21%);
   }
   &.btn-primary {
     border: 2px solid $primary-c;
     color: $primary-c;
     &:hover {
-      color: tint($primary-c, 21%);
+      color: shade($primary-c, 21%);
     }
   }
   &.btn-warning {
     border: 2px solid $warning-c;
     color: $warning-c;
     &:hover {
-      color: tint($warning-c, 21%);
+      color: shade($warning-c, 21%);
     }
   }
   &.btn-success {
     border: 2px solid $success-c;
     color: $success-c;
     &:hover {
-      color: tint($success-c, 21%);
+      color: shade($success-c, 21%);
     }
   }
 }
