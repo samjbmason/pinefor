@@ -3,10 +3,11 @@
    ========================================================================== */
 form {
   margin-bottom: 21px;
-  i {
     font-size: 13px;
   }
-}
+  i {
+    color: tint($alpha-c, 39%);
+    font-size: 13px;
   }
 }
 
