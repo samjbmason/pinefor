@@ -108,9 +108,10 @@ button,
     }
   }
 
-
-.user-controls .btn {
-  display: inline;
+  &.with-text {
+    margin-left: 11px;
+    margin-right: 11px;
+  }
 }
 
 .btn-block {
