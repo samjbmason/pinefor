@@ -2,8 +2,8 @@
   <section class="list-meta js-meta-container">
     <div class="list-details js-list-details">
       <h2><%= @list.name %></h2>
-      <time><%= @list.human_due_date %></time>
       <a href="#" class="js-show-meta-form">Edit Details</a>
+      <time datetime="<%= @list.due_date %>"><%= @list.human_due_date %></time>
     </div> <!--  .list-details -->
 
     <%= render'edit_form' %>
