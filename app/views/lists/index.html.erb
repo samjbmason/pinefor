@@ -6,11 +6,7 @@
 
   <% if @lists.any? %>
     <% @lists.each do |list| %>
-    <div class="single-list">
-        <p><%= link_to list.name, list_path(list), css: 'single-list-link' %>
-          <span class="gift-count"><%= pluralize(list.gifts.count, 'gift') %></span>
-        </p>
-    </div> <!--  .single-list -->
+      <%= render'single_list', list: list %>
     <% end %>
   <% else %>
     <p class="no-data">You haven’t created any lists yet</p>
