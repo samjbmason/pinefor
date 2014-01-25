@@ -108,6 +108,7 @@ button,
 .btn-block {
   display: inline-block;
   color: $beta-c !important;
+
   &.btn-success {
     background: $success-c;
     &:hover {
@@ -148,6 +149,7 @@ button,
    ========================================================================== */
 .new_user,
 .edit_user {
+
   label {
     font-size: 18px;
   }
