@@ -1,4 +1,4 @@
 <%= form_for [@list, @gift], html: {class: "create-gift-form phrase-form"} do |f| %>
-    <p>I’m pining for a <%= f.text_field :name, placeholder: "Playstation 4" %> it can be bought here <%= f.text_field :link %></p>
-  <%= f.submit "Create Gift" %>
+    <p>I’m pining for a <%= f.text_field :name, placeholder: "Playstation 4" %> it can be bought here <%= f.text_field :link, placeholder: "play.co.uk" %></p>
+  <%= f.submit "Create Gift", class: "btn btn-success" %>
 <% end %>
