@@ -47,3 +47,19 @@
 /* ==========================================================================
    List Edit Form
    ========================================================================== */
+.update-list-form {
+  display: none;
+
+  .inline-fields {
+    @include inline-block;
+    width: 40%;
+    margin-right: 21px;
+  }
+  label {
+    font-size: 13px;
+    display: block;
+  }
+  input[type="text"] {
+    width: 100%;
+  }
+}
