@@ -29,11 +29,16 @@
 .icon-cancel:before { content: '\e804'; }
 .icon-link:before { content: '\e800'; }
 
-::-moz-selection,
+::-moz-selection {
+  background-color: #3a92c8;
+  color: $beta-c;
+}
+
 ::selection {
   background-color: #3a92c8;
   color: $beta-c;
 }
+
 
 strong {
   &.whitney {
