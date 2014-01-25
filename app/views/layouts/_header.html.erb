@@ -7,7 +7,7 @@
       <% end %>
     </h1>
 
-    <nav class="user-controls">
+    <nav class="site-nav">
       <% if user_signed_in? %>
         <%= link_to 'Profile', edit_user_registration_path, class: "btn btn-primary" %>
         <%= link_to 'Sign out', destroy_user_session_path, class: "btn btn-warning", method: :delete %>
