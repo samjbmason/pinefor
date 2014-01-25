@@ -1,6 +1,23 @@
 /* ==========================================================================
    Single List in all lists
    ========================================================================== */
+.all-lists {
+  a {
+    text-decoration: none;
+    display: block;
+  }
+  .single-list {
+    margin-bottom: 18px;
+    border-bottom: 2px solid #eeeeee;
+    &:last-child {
+      border-bottom: none;
+    }
+    .gift-count {
+      float: right;
+    }
+  }
+}
+
 
 /* ==========================================================================
    List meta info
