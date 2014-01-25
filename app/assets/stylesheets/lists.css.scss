@@ -22,6 +22,27 @@
 /* ==========================================================================
    List meta info
    ========================================================================== */
+.list-meta {
+  &.open {
+    .js-list-details {
+      display: none;
+    }
+    .js-list-edit {
+      display: block;
+    }
+  }
+  h2 {
+    @include inline-block;
+  }
+  time {
+    font-size: 13px;
+  }
+  .js-show-meta-form {
+    float: right;
+  }
+}
+
+
 
 /* ==========================================================================
    List Edit Form
