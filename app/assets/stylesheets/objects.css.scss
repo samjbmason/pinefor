@@ -29,6 +29,11 @@ input[type="password"] {
   }
 }
 
+input[type="checkbox"] {
+  position: relative;
+  top: -1px;
+}
+
 .phrase-form {
   font-family: $archer;
   width: 100%;
