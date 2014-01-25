@@ -1,5 +1,12 @@
 <%= form_for @list, html: {class: "update-list-form js-list-edit"} do |f| %>
-  <%= f.text_field :name %>
-  <%= f.text_field :human_due_date %>
-  <%= f.submit "Update List" %>
+  <fieldset class="inline-fields">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </fieldset>
+
+  <fieldset class="inline-fields">
+    <%= f.label :human_due_date, "Due date" %>
+    <%= f.text_field :human_due_date %>
+  </fieldset>
+
 <% end %>
