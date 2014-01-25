@@ -1,10 +1,10 @@
-<%= form_for @list, html: {class: "create-list-form feature-form"} do |f| %>
-  <div class="inline-field-form">
+<%= form_for @list, html: {class: "create-list-form phrase-form"} do |f| %>
+
     <p>I want to create a list for
     <%= f.text_field :name, placeholder: "My Birthday", autofocus: true %>
     on the
     <%= f.text_field :human_due_date, placeholder: "10th Jan 2014" %>
     </p>
-  </div> <!--  .inline-field-form -->
-  <%= f.submit "Create List" %>
+    <%= f.submit "Create List", class: "btn btn-success" %>
+
 <% end %>

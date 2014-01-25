@@ -7,17 +7,6 @@ form {
     font-size: 13px;
   }
 }
-
-.feature-form {
-  width: 100%;
-  font-size: 29px;
-  background: #eeeeee;
-  padding: 13px;
-
-  input[type="text"] {
-    font-size: 29px;
-    font-weight: 600;
-    max-width: 200px;
   }
 }
 
@@ -34,6 +23,22 @@ input[type="password"] {
   @include transition (border-color 0.2s ease-in);
   &:focus {
     border-color: shade($primary-c, 30%);
+  }
+}
+
+.phrase-form {
+  font-family: $archer;
+  width: 100%;
+  border-bottom: 2px solid #eeeeee;
+  padding: 18px 0;
+
+  p {
+    font-size: 29px;
+  }
+  input[type="text"] {
+    font-size: 29px;
+    font-weight: 400;
+    max-width: 200px;
   }
 }
 
