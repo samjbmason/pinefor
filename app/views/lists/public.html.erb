@@ -2,10 +2,10 @@
   <% # Checks if user is logged in and if not shows login form then checks if they own the list they are trying to view %>
 
   <% if !user_signed_in? %>
-    <%= render 'public/login' %>
+    <%= render'lists/public/login' %>
   <% elsif current_user == @list.user %>
-    <%= render 'public/owns' %>
+    <%= render'lists/public/owns' %>
   <% else %>
-    <%= render 'public/show' %>
+    <%= render'lists/public/show' %>
   <% end %>
 </div>
