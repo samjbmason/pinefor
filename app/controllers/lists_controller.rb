@@ -1,5 +1,5 @@
 class ListsController < ApplicationController
-  before_filter :authenticate_user!, except: :shared
+  before_filter :authenticate_user!, except: :public
   before_action :find_list, only: [:show, :update, :destroy]
 
   # Shows all logged in user lists
