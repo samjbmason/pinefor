@@ -1,12 +1,20 @@
 <div class="single-gift-container js-gift-container">
   <div class="gift-details js-gift-details">
-    <p>
-      <%= gift.name %>
-      <%= gift.get_domain %>
-      <%= link_to "", gift.link, class: 'link-updates link-btn' %>
-      <a href="#" class="btn btn-primary js-show-gift-meta-form">Edit</a>
-      <%= link_to "", [@list, gift], method: :delete, class: 'delete-btn', data: { confirm: "You sure?" } %>
-    </p>
+
+    <div class="gift-meta">
+      <i class="icon-gift"></i><%= gift.name -%>
+      <%= link_to gift.link, class: 'gift-link' do %>
+        <i class="icon-link"></i><%= gift.get_domain -%>
+      <% end -%>
+    </div>
+
+    <div class="gift-actions">
+      <a href="#" class="js-show-gift-meta-form edit-gift"><i class="icon-edit"></i></a>
+      <%= link_to [@list, gift], method: :delete, class: 'delete-gift', data: { confirm: "You sure?" } do %>
+        <i class="icon-delete"></i>
+      <% end -%>
+    </div> <!--  .gift-actions -->
+
   </div> <!--  .gift-details js-gift-details -->
 
   <%= render'gifts/edit_form', gift: gift %>
