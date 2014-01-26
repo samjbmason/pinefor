@@ -4,7 +4,7 @@ class List < ActiveRecord::Base
 
   validates :name, presence: true
 
-  before_save :create_unique_public_hash
+  before_create :create_unique_public_hash
 
   # This creates a unique string then checks if it exists if it does it runs loop again until unique is found
   def create_unique_public_hash
