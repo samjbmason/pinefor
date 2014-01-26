@@ -12,3 +12,13 @@ $(document).on "ready page:load", ->
   # Allows to click on url and select all for easy copying
   $(".share-url").on "click", ->
     $(this).select()
+
+  # Change hover to different
+  dataAttr =
+  origData =
+  $(".list-event-date").hover (->
+    dataAttr = $(this).data("time-to")
+    origData = $(this).html()
+    $(this).html(dataAttr)
+  ), ->
+    $(this).html(origData)
