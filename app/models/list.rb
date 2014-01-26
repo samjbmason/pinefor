@@ -23,6 +23,12 @@ class List < ActiveRecord::Base
     self.due_date = Chronic.parse(date) if date.present?
   end
 
+  def public_url(request)
+    protocol = request.protocol
+    host = request.host
+    url = protocol + host + '/public/'+ self.public_hash
+  end
+
   def to_param
     "#{id}-#{name.parameterize}"
   end
