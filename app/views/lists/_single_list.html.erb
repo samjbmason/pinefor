@@ -2,7 +2,7 @@
   <p>
     <%=  link_to list_path(list), css: 'single-list__link' do  %>
       <%= list.name %>
-      <span class="gift-count"><i class="icon-gift"></i>  <%= pluralize(list.gifts.count, 'gift') %></span>
+      <span class="gift-count"><i class="icon-gift"></i> <%= pluralize(list.gifts.count, 'gift') %></span>
     <% end %>
   </p>
 </div> <!--  .single-list -->
