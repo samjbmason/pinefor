@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
 
   # Gets previous url if the request is coming from the public controller
   def store_location
-    session[:previous_url] = request.fullpath if params[:controller] == 'public'
+    session[:previous_url] = request.fullpath if action_name == 'public'
   end
 
   # If previous url session variable is present then redirect after sign in else send to normal root
