@@ -8,3 +8,7 @@ $(document).on "ready page:load", ->
   $(".js-close-list-edit").on "click", ->
     $(".js-meta-container").removeClass "open"
     false
+
+  # Allows to click on url and select all for easy copying
+  $(".share-url").on "click", ->
+    $(this).select()
