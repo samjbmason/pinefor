@@ -73,6 +73,11 @@ header {
   @include span-columns(8);
 }
 
+.danger-zone {
+  text-align: right;
+  margin-top: 34px;
+}
+
 
 /* ==========================================================================
    Footer
