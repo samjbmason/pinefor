@@ -33,7 +33,7 @@ class GiftsController < ApplicationController
       redirect_to public_list_path, notice: 'Yayy, your buying this gift.'
     else
       @gift.update(user_id: nil)
-      redirect_to public_list_path, notice: 'Oh no, you seem to not be buying this gift anymore.'
+      redirect_to public_list_path, notice: 'You have updated your gift status to not buying.'
     end
   end
 

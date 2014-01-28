@@ -5,8 +5,6 @@
     <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
       <%= devise_error_messages! %>
 
-      <p>Already signed up? <%= link_to "Sign in", new_session_path(resource_name), class: "btn btn-primary with-text" %></p>
-
       <fieldset>
         <%= f.label :full_name %>
         <%= f.text_field :full_name, :autofocus => true %>
@@ -28,6 +26,8 @@
       </fieldset>
 
       <%= f.submit "Sign up", class: "btn btn-success" %>
+
+      <p class="action-switch">Already signed up? <%= link_to "Sign in", new_session_path(resource_name), class: "btn no-border btn-primary with-text" %></p>
 
     <% end %>
 

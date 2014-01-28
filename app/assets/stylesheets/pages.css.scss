@@ -2,6 +2,7 @@
   background: url(image-path("hero-1.jpg")) no-repeat center bottom;
   background-size: cover;
   min-height: 350px;
+  padding: 40px 0;
 }
 
 .hero-text {
@@ -13,7 +14,8 @@
     font-family: $archer;
     font-weight: 400;
     font-size: 47px;
-    margin-top: 56px;
+    line-height: 1.2;
+    margin-top: 26px;
   }
   h3 {
     padding: 0 34px;

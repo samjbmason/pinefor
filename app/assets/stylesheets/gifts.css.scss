@@ -11,9 +11,6 @@
     @include span-columns(4);
     text-align: right;
   }
-  a {
-    text-decoration: none;
-  }
   .gift-link {
     margin-left: 18px;
   }
@@ -34,6 +31,7 @@
 .create-gift-form.phrase-form {
   border-top: 2px solid #eeeeee;
 }
+
 
 /* ==========================================================================
    Gift edit
@@ -64,10 +62,39 @@
 
 
 /* ==========================================================================
-   Single bought gift
+   Public show page gifts
    ========================================================================== */
-.single-bought-gift {
-  a {
-    text-decoration: none;
-  }
+.public-list-gifts-container {
+  border-top: 2px solid #eeeeee;
+  padding-top: 21px;
 }
+
+.single-public-gift {
+  .gift-meta {
+    margin-left: 5px;
+  }
+  .icon-desc {
+    margin-left: 5px;
+    background-color: #eeeeee;
+    font-size: 13px;
+    position: relative;
+    padding: 4px;
+    display: none;
+    &:before {
+      content: '';
+      position: absolute;
+      left: -14px;
+      top: 50%;
+      margin-top: -7px;
+      @include triangle(14px, #eeeeee, left);
+    }
+  }
+  .single-gift--bought {
+    .gift-meta {
+      font-size: 13px;
+    }
+    .icon-gift:before {
+      color: tint($alpha-c, 21%);
+    }
+  }
+ }

@@ -1,4 +1,5 @@
 <div class="single-public-gift">
+
   <% if gift.user.nil? %>
   <p>
     <%= link_to gift.link, class: 'icon-gift' do %>
@@ -6,7 +7,8 @@
       <i class="icon-link"></i>
     <% end %>
 
-    <%= link_to '', public_gift_update_path(@list.public_hash, gift.id), class: 'gift-meta icon-check larger-icons', method: :put %>
+    <%= link_to '', public_gift_update_path(@list.public_hash, gift.id), class: 'gift-meta icon-check larger-icons js-mark-gift', method: :put %>
+    <span class="icon-desc">Mark this gift as bought</span>
 
   <% elsif gift.user == current_user %>
   <p>
@@ -15,13 +17,15 @@
       <i class="icon-link"></i>
     <% end %>
 
-    <%= link_to '', public_gift_update_path(@list.public_hash, gift.id), class: 'gift-meta icon-delete larger-icons', method: :put %>
+    <%= link_to '', public_gift_update_path(@list.public_hash, gift.id), class: 'gift-meta icon-delete larger-icons js-mark-gift', method: :put %>
+    <span class="icon-desc">Don't buy this gift anymore</span>
 
   <% else %>
-  <p class="bought-gift">
+  <p class="single-gift--bought">
     <span class="icon-gift"> <%= gift.name %></span>
     <span class="gift-meta"><%= gift.user.full_name %> has already bought this</span>
 
   <% end %>
   </p>
+
 </div> <!--  .single-public-gift -->

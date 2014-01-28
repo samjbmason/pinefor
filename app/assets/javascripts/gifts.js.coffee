@@ -9,3 +9,9 @@ $(document).on "ready page:load", ->
   $(".js-close-gift-edit").on "click", ->
     $(this).closest(".js-gift-container").removeClass "open"
     false
+
+  # Show closest span next to mark icon
+  $(".js-mark-gift").hover (->
+    $(this).siblings(".icon-desc").fadeIn 200
+  ), ->
+    $(this).siblings(".icon-desc").fadeOut 200

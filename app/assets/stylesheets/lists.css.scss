@@ -3,7 +3,6 @@
    ========================================================================== */
 .all-lists {
   a {
-    text-decoration: none;
     display: block;
   }
   .single-list {
@@ -95,43 +94,5 @@
   time {
     font-size: 13px;
     cursor: pointer;
-  }
-}
-
-.public-list-gifts-container {
-  border-top: 2px solid #eeeeee;
-  padding-top: 21px;
-}
-
-.single-public-gift {
-  a {
-    text-decoration: none;
-  }
-  .larger-icons {
-    font-size: 1.2em;
-    vertical-align: middle;
-  }
-  .gift-meta {
-    margin-left: 5px;
-  }
-  .icon-check {
-    color: $success-c;
-    &:hover {
-      color: shade($success-c, 21%);
-    }
-  }
-  .icon-delete {
-    color: #F06050;
-    &:hover {
-      color: shade(#F06050, 21%);
-    }
-  }
-  .bought-gift {
-    .gift-meta {
-      font-size: 13px;
-    }
-    .icon-gift:before {
-      color: tint($alpha-c, 21%);
-    }
   }
 }

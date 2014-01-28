@@ -22,6 +22,7 @@
   text-transform: none;
   font-size: 1em;
   margin-right: 2px;
+  transition: color 0.2s ease-in;
 }
 
 .icon-gift:before { content: '\e801'; }
@@ -30,6 +31,11 @@
 .icon-delete:before { content: '\e802'; }
 .icon-link:before { content: '\e800'; }
 .icon-edit:before { content: '\e803'; }
+
+.larger-icons:before {
+  font-size: 1.2em;
+  vertical-align: middle;
+}
 
 ::-moz-selection {
   background-color: #3a92c8;
@@ -48,7 +54,7 @@ strong {
 
 a {
   color: inherit;
-  text-decoration: underline;
+  text-decoration: none;
   font-weight: 400;
   @include transition (color 0.2s ease-in);
   &:hover {
@@ -122,6 +128,19 @@ h3 {
 }
 
 .icon-heart:before,
-.icon-gift:before {
+.icon-gift:before,
+.icon-delete:before {
   color: #F06050;
+}
+
+.icon-check {
+  &:before {
+    color: $success-c;
+  }
+  &:hover:before {
+    color: shade($success-c, 21%);
+  }
+}
+.icon-delete:hover:before {
+  color: shade(#F06050, 21%);
 }

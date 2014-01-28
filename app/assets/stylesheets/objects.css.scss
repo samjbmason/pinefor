@@ -4,7 +4,6 @@
 form {
   margin-bottom: 21px;
   p {
-    font-size: 13px;
     margin-bottom: 11px;
   }
   i {
@@ -42,11 +41,18 @@ input[type="checkbox"] {
   top: -1px;
 }
 
-.remember-me {
+fieldset.remember-me {
+  label {
+    font-size: 13px;
+  }
   margin-bottom: 13px;
 }
 
 .forgot-password {
+  font-size: 13px;
+}
+
+.action-switch {
   margin-top: 21px;
 }
 
@@ -66,12 +72,12 @@ input[type="checkbox"] {
   }
 }
 
+
 /* ==========================================================================
    Edit forms
    ========================================================================== */
 .update-list-form,
-.update-gift-form
- {
+.update-gift-form {
   display: none;
 
   .inline-fields {
@@ -80,7 +86,6 @@ input[type="checkbox"] {
     &:first-of-type {
       margin-right: 8%;
     }
-
   }
   label {
     font-size: 13px;
@@ -109,13 +114,6 @@ input[type="checkbox"] {
   }
 }
 
-.remember-me {
-  label {
-    font-size: 13px;
-  }
-}
-
-
 
 /* ==========================================================================
    Buttons
@@ -141,33 +139,39 @@ button,
   @include transition (all 0.2s linear);
 
   &:hover {
-    color: shade($alpha-c, 21%);
+    color: shade($alpha-c, 29%);
   }
   &.btn-primary {
     border: 2px solid $primary-c;
     color: $primary-c;
     &:hover {
-      color: shade($primary-c, 21%);
+      color: shade($primary-c, 29%);
     }
   }
   &.btn-warning {
     border: 2px solid $warning-c;
     color: $warning-c;
     &:hover {
-      color: shade($warning-c, 21%);
+      color: shade($warning-c, 29%);
     }
   }
   &.btn-success {
     border: 2px solid $success-c;
     color: $success-c;
     &:hover {
-      color: shade($success-c, 21%);
+      color: shade($success-c, 29%);
     }
   }
 
   &.with-text {
     margin-left: 11px;
     margin-right: 11px;
+  }
+  &.no-border {
+    border: none;
+    padding: 0;
+    margin: 0;
+    font-size: inherit;
   }
 }
 
