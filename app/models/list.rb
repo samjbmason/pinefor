@@ -3,6 +3,7 @@ class List < ActiveRecord::Base
   has_many :gifts, dependent: :destroy
 
   validates :name, presence: true
+  validates :human_due_date, presence: true
 
   before_create :create_unique_public_hash
 

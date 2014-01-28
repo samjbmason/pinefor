@@ -3,7 +3,8 @@ class Gift < ActiveRecord::Base
   belongs_to :user
 
   validates :name, presence: true
-  validates :price, numericality: true, allow_nil: true
+  validates :link, presence: true
+
   before_save :add_link_protocol
 
 
