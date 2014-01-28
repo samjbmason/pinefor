@@ -38,6 +38,7 @@
   }
   time {
     font-size: 13px;
+    cursor: pointer;
   }
   .js-show-meta-form {
     float: right;
@@ -80,5 +81,57 @@
   h2 {
     text-align: center;
     line-height: 1.3;
+  }
+}
+
+
+/* ==========================================================================
+   Public show
+   ========================================================================== */
+.public-list-meta {
+  h2 {
+    @include inline-block;
+  }
+  time {
+    font-size: 13px;
+    cursor: pointer;
+  }
+}
+
+.public-list-gifts-container {
+  border-top: 2px solid #eeeeee;
+  padding-top: 21px;
+}
+
+.single-public-gift {
+  a {
+    text-decoration: none;
+  }
+  .larger-icons {
+    font-size: 1.2em;
+    vertical-align: middle;
+  }
+  .gift-meta {
+    margin-left: 5px;
+  }
+  .icon-check {
+    color: $success-c;
+    &:hover {
+      color: shade($success-c, 21%);
+    }
+  }
+  .icon-delete {
+    color: #F06050;
+    &:hover {
+      color: shade(#F06050, 21%);
+    }
+  }
+  .bought-gift {
+    .gift-meta {
+      font-size: 13px;
+    }
+    .icon-gift:before {
+      color: tint($alpha-c, 21%);
+    }
   }
 }
