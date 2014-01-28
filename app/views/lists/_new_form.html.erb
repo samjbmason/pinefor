@@ -1,9 +1,9 @@
-<%= form_for @list, html: {class: "create-list-form phrase-form"} do |f| %>
+<%= form_for @list, html: {class: "create-list-form phrase-form js-validate", "parsley-validate"=>""} do |f| %>
 
     <p>I want to create a list for
-    <%= f.text_field :name, placeholder: "My Birthday", autofocus: true %>
+    <%= f.text_field :name, placeholder: "My Birthday", autofocus: true, "parsley-required"=>"true" %>
     on the
-    <%= f.text_field :human_due_date, placeholder: "10th Jan 2014" %>
+    <%= f.text_field :human_due_date, placeholder: "10th Jan 2014", "parsley-required"=>"true" %>
     </p>
     <%= f.submit "Create List", class: "btn btn-success" %>
 
