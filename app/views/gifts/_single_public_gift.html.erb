@@ -1,0 +1,27 @@
+<div class="single-public-gift">
+  <% if gift.user.nil? %>
+  <p>
+    <%= link_to gift.link, class: 'icon-gift' do %>
+      <%= gift.name %>
+      <i class="icon-link"></i>
+    <% end %>
+
+    <%= link_to '', public_gift_update_path(@list.public_hash, gift.id), class: 'gift-meta icon-check larger-icons', method: :put %>
+
+  <% elsif gift.user == current_user %>
+  <p>
+    <%= link_to gift.link, class: 'icon-gift' do %>
+      <%= gift.name %>
+      <i class="icon-link"></i>
+    <% end %>
+
+    <%= link_to '', public_gift_update_path(@list.public_hash, gift.id), class: 'gift-meta icon-delete larger-icons', method: :put %>
+
+  <% else %>
+  <p class="bought-gift">
+    <span class="icon-gift"> <%= gift.name %></span>
+    <span class="gift-meta"><%= gift.user.full_name %> has already bought this</span>
+
+  <% end %>
+  </p>
+</div> <!--  .single-public-gift -->
