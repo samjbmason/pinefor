@@ -5,16 +5,16 @@ class GiftsController < ApplicationController
   def create
     @gift = @list.gifts.new(gift_params)
     if @gift.save
-      redirect_to @list, notice: 'Gift was successfully added.'
+      redirect_to @list, notice: 'You added a gift, awesome!'
     else
-      redirect_to @list, alert: 'Gift was not created, try again.'
+      redirect_to @list, alert: 'Woops you actually need to fill in the form'
     end
   end
 
   def update
     @gift = @list.gifts.find(params[:id])
     if @gift.update_attributes(gift_params)
-      redirect_to @list, :notice => 'Gift was successfully updated.'
+      redirect_to @list, :notice => 'You updated your gift succesfully.'
     else
       redirect_to @list
     end
@@ -22,7 +22,7 @@ class GiftsController < ApplicationController
 
   def destroy
     @list.gifts.find(params[:id]).destroy
-    redirect_to @list, notice: 'List was deleted.'
+    redirect_to @list, notice: 'You deleted your gift!'
   end
 
   def public_update
@@ -30,10 +30,10 @@ class GiftsController < ApplicationController
     @gift = @list.gifts.find(params[:id])
     if @gift.user_id.nil?
       @gift.update(user_id: current_user.id)
-      redirect_to public_list_path, notice: 'Your buying this gift.'
+      redirect_to public_list_path, notice: 'Yayy, your buying this gift.'
     else
       @gift.update(user_id: nil)
-      redirect_to public_list_path, notice: 'Your not buying this gift anymore.'
+      redirect_to public_list_path, notice: 'Oh no, you seem to not be buying this gift anymore.'
     end
   end
 

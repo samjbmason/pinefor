@@ -12,10 +12,13 @@ class ListsController < ApplicationController
   # Creates list or redirect back to index page if invalid
   def create
     @list = current_user.lists.new(list_params)
+    @lists  = current_user.lists.order('created_at desc')
+    @gifts  = current_user.gifts.all
+
     if @list.save
-      redirect_to @list, notice: 'List was successfully created.'
+      redirect_to @list, notice: "You created a list, that's swell!"
     else
-      redirect_to root_path, alert: 'List was not created, try again.'
+      redirect_to root_path, alert: 'Woah there, you need to add some text.'
     end
   end
 
@@ -28,7 +31,7 @@ class ListsController < ApplicationController
   # Update List details
   def update
     if @list.update_attributes(list_params)
-      redirect_to @list, notice: 'List was successfully updated.'
+      redirect_to @list, notice: 'You updated your list, good job!'
     else
       render :show
     end
@@ -37,7 +40,7 @@ class ListsController < ApplicationController
   # Delete list
   def destroy
     @list.destroy
-    redirect_to root_path, notice: 'List was deleted.'
+    redirect_to root_path, notice: 'You deleted your list. I hope you let people know?'
   end
 
   # Shared List action for public views
