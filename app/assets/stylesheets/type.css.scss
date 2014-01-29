@@ -138,6 +138,9 @@ h3 {
   font-weight: 400;
   font-size: 11px;
   line-height: 1.4;
+  @include media($mobile) {
+    position: static;
+  }
 }
 
 .icon-heart:before,
