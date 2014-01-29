@@ -97,6 +97,10 @@ header {
 .centered {
   @include shift(2);
   @include span-columns(8);
+  @include media($mobile) {
+    @include shift(0);
+    @include span-columns(12);
+  }
 }
 
 .danger-zone {
