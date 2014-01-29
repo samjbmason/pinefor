@@ -6,3 +6,6 @@ $beta-c: #fafafa;
 $warning-c: #c26868;
 $success-c: #86be91;
 $primary-c: #50a9d1;
+
+$medium: new-breakpoint(max-width 730px);
+$mobile: new-breakpoint(max-width 470px);
