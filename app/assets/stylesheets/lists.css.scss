@@ -11,6 +11,9 @@
     &:last-child {
       border-bottom: none;
     }
+    p {
+      overflow: auto;
+    }
     .gift-count {
       float: right;
     }
