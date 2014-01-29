@@ -88,6 +88,10 @@ header {
 
 .gifts-buying {
   text-align: right;
+  @include media($medium) {
+    margin-top: 47px;
+    text-align: left;
+  }
 }
 
 .centered {
