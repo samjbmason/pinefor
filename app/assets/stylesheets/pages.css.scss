@@ -19,3 +19,23 @@
     padding: 0 34px;
   }
 }
+
+
+/* ==========================================================================
+   Steps of using the app
+   ========================================================================== */
+
+.step {
+  @include span-columns(6);
+  @include omega(2n);
+  text-align: center;
+  margin-top: 29px;
+  p {
+    @include span-columns(12);
+    padding: 0 13px;
+  }
+  img {
+    max-width: 147px;
+    margin-bottom: 11px;
+  }
+}
