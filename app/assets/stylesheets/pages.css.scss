@@ -31,6 +31,10 @@
   @include omega(2n);
   text-align: center;
   margin-top: 29px;
+  @include media($mobile) {
+    @include span-columns(12);
+  }
+
   p {
     @include span-columns(12);
     padding: 0 13px;
