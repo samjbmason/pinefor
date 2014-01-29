@@ -73,6 +73,11 @@ h1 {
   line-height: 56px;
   position: relative;
   padding-left: 50px;
+  @include media($mobile) {
+    float: none;
+    line-height: 1.4;
+    display: inline;
+  }
 
   &:before {
     content: '';
