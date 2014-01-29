@@ -34,6 +34,10 @@ header {
   background: #4C5364;
   .container {
     height: 56px;
+    @include media($mobile) {
+      height: auto;
+      text-align: center;
+    }
   }
 }
 
