@@ -1,5 +1,5 @@
 .hero {
-  background: url(image-path("hero4.jpg")) no-repeat center;
+  background: url(image-path("hero9.jpg")) no-repeat center;
   background-size: cover;
   min-height: 300px;
   padding: 40px 0;
@@ -7,6 +7,7 @@
 
 .hero-text {
   text-align: center;
+  color: $beta-c;
 
   h2 {
     font-family: $archer;
