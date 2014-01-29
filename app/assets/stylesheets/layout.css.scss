@@ -15,6 +15,10 @@ body {
 .content-container {
   @include outer-container;
   position: relative;
+  @include media($medium) {
+    padding-left: 13px;
+    padding-right: 13px;
+  }
 }
 
 .content-container {
