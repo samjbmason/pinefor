@@ -81,6 +81,9 @@ header {
 .all-lists,
 .gifts-buying {
   @include span-columns(6);
+  @include media($medium) {
+    @include span-columns(12);
+  }
 }
 
 .gifts-buying {
