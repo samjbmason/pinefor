@@ -68,6 +68,10 @@ input[type="checkbox"] {
     font-size: 29px;
     font-weight: 400;
     max-width: 200px;
+    @include media($mobile) {
+      max-width: 100%;
+      width: 100%;
+      text-align: center;
     }
   }
 }
