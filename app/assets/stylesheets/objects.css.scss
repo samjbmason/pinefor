@@ -63,16 +63,11 @@ input[type="checkbox"] {
 
   p {
     font-size: 29px;
-    @include media($medium) {
-      font-size: 21px;
-    }
   }
   input[type="text"] {
     font-size: 29px;
     font-weight: 400;
     max-width: 200px;
-    @include media($medium) {
-      font-size: 21px;
     }
   }
 }
