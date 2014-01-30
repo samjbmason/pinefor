@@ -91,11 +91,24 @@
    Public show
    ========================================================================== */
 .public-list-meta {
+  @include media($medium) {
+    margin-bottom: 21px;
+  }
   h2 {
     @include inline-block;
+    @include media($medium) {
+      margin-bottom: 5px;
+    }
+    @include media($mobile) {
+      strong {
+        display: block;
+      }
+    }
   }
   time {
     font-size: 13px;
-    cursor: pointer;
+    @include media($medium) {
+      display: block;
+    }
   }
 }
