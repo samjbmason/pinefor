@@ -9,10 +9,8 @@
     </div>
 
     <div class="gift-actions">
-      <a href="#" class="js-show-gift-meta-form edit-gift"><i class="icon-edit"></i></a>
-      <%= link_to [@list, gift], method: :delete, class: 'delete-gift', data: { confirm: "You sure?" } do %>
-        <i class="icon-delete"></i>
-      <% end -%>
+      <a href="#" class="js-show-gift-meta-form edit-gift icon-edit"></a>
+      <%= link_to "", [@list, gift], method: :delete, class: 'delete-gift icon-delete', data: { confirm: "You sure?" } %>
     </div> <!--  .gift-actions -->
 
   </div> <!--  .gift-details js-gift-details -->

@@ -21,10 +21,10 @@
   }
   .edit-gift,
   .delete-gift {
-    display: none;
+    opacity: 0;
     font-size: 1.3em;
     @include media($mobile) {
-      display: inline;
+      opacity: 1;
     }
   }
 
@@ -52,7 +52,7 @@
   &:hover {
     .edit-gift,
     .delete-gift {
-      display:inline;
+      opacity: 1;
     }
   }
   &:last-child {
