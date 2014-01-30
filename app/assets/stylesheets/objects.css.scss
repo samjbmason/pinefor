@@ -60,6 +60,9 @@ input[type="checkbox"] {
   width: 100%;
   border-bottom: 2px solid #eeeeee;
   padding: 18px 0;
+  @include media($mobile) {
+    text-align: center;
+  }
 
   p {
     font-size: 29px;
