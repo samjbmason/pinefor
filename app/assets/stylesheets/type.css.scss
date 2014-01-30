@@ -149,6 +149,15 @@ h3 {
   color: #F06050;
 }
 
+.icon-gift {
+  &.gift-success:before {
+    color: $success-c;
+  }
+  &.gift-bought:before {
+    color: tint($alpha-c, 21%);
+  }
+}
+
 .icon-check {
   &:before {
     color: $success-c;
