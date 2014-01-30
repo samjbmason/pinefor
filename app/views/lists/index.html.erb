@@ -17,7 +17,7 @@
     <h2>Gifts your buying</h2>
   <% if @gifts.any? %>
     <% @gifts.each do |gift| %>
-      <%= render'bought_gift', gift: gift %>
+      <%= render'gifts/bought_gift', gift: gift %>
     <% end %>
   <% else %>
     <p class="no-data">You haven’t bought any gifts yet :(</p>
