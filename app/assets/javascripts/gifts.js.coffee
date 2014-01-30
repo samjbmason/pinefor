@@ -12,6 +12,6 @@ $(document).on "ready page:load", ->
 
   # Show closest span next to mark icon
   $(".js-mark-gift").hover (->
-    $(this).siblings(".icon-desc").fadeIn 200
+    $(this).siblings(".icon-desc").addClass "open"
   ), ->
-    $(this).siblings(".icon-desc").fadeOut 200
+    $(this).siblings(".icon-desc").removeClass "open"
