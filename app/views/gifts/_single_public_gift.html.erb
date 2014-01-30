@@ -1,8 +1,8 @@
 <div class="single-public-gift">
 
-  <% if gift.user.nil? %>
+  <% if gift.user.nil? # Gift is available to buy %>
   <p>
-    <%= link_to gift.link, class: 'icon-gift' do %>
+    <%= link_to gift.link, class: 'icon-gift gift-link' do %>
       <%= gift.name %>
       <i class="icon-link"></i>
     <% end %>
@@ -10,9 +10,9 @@
     <%= link_to '', public_gift_update_path(@list.public_hash, gift.id), class: 'gift-meta icon-check larger-icons js-mark-gift', method: :put %>
     <span class="icon-desc">Mark this gift as bought</span>
 
-  <% elsif gift.user == current_user %>
+  <% elsif gift.user == current_user # User is buying this gift %>
   <p>
-    <%= link_to gift.link, class: 'icon-gift' do %>
+    <%= link_to gift.link, class: 'icon-gift gift-success gift-link' do %>
       <%= gift.name %>
       <i class="icon-link"></i>
     <% end %>
@@ -20,10 +20,10 @@
     <%= link_to '', public_gift_update_path(@list.public_hash, gift.id), class: 'gift-meta icon-delete larger-icons js-mark-gift', method: :put %>
     <span class="icon-desc">Don't buy this gift anymore</span>
 
-  <% else %>
+  <% else # Another user is buying this gift %>
   <p class="single-gift--bought">
-    <span class="icon-gift"> <%= gift.name %></span>
-    <span class="gift-meta"><%= gift.user.full_name %> has already bought this</span>
+    <span class="icon-gift gift-bought"> <%= gift.name %></span>
+    <span class="gift-meta no-action"><%= gift.user.full_name %> has already bought this</span>
 
   <% end %>
   </p>
