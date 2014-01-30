@@ -51,6 +51,9 @@
 
     p {
       margin-bottom: 5px;
+      @include media($mobile) {
+        margin-top: 21px;
+      }
     }
     .share-url {
       font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
