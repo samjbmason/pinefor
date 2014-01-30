@@ -124,6 +124,16 @@
     position: relative;
     padding: 4px;
     display: none;
+    @include media($mobile) {
+      background: transparent;
+      display: block;
+    }
+    &.open {
+      @include inline-block;
+      @include media($mobile) {
+        display: block;
+      }
+    }
     &:before {
       content: '';
       position: absolute;
@@ -131,6 +141,9 @@
       top: 50%;
       margin-top: -7px;
       @include triangle(14px, #eeeeee, left);
+      @include media($mobile) {
+        display: none;
+      }
     }
   }
   .single-gift--bought {
