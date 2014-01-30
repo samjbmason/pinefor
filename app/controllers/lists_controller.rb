@@ -46,6 +46,9 @@ class ListsController < ApplicationController
   # Shared List action for public views
   def public
     @list = List.find_by public_hash: params[:public_hash]
+    if @list.nil?
+      render "lists/public/not_found"
+    end
   end
 
   private
