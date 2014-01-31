@@ -6,14 +6,14 @@ class ListsController < ApplicationController
   def index
     @lists  = current_user.lists.order('created_at desc')
     @list   = List.new
-    @gifts  = current_user.gifts.all
+    @gifts  = current_user.gifts
   end
 
   # Creates list or redirect back to index page if invalid
   def create
     @list = current_user.lists.new(list_params)
     @lists  = current_user.lists.order('created_at desc')
-    @gifts  = current_user.gifts.all
+    @gifts  = current_user.gifts
 
     if @list.save
       redirect_to @list, notice: "You created a list, that's swell!"
@@ -25,7 +25,7 @@ class ListsController < ApplicationController
   # Show individual list GET'/list/#id'
   def show
     @gift   = Gift.new
-    @gifts  = @list.gifts.all
+    @gifts  = @list.gifts
   end
 
   # Update List details
