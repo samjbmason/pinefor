@@ -12,4 +12,23 @@ module ApplicationHelper
   def devise_mapping
     @devise_mapping ||= Devise.mappings[:user]
   end
+
+  # Spits out a random greeting in the header
+  def welcome_intro
+    welcomes = [
+      "Hi",
+      "Hi there",
+      "Welcome",
+      "Your awesome",
+      "Howdy",
+      "What's crackin?",
+      "Welcome back",
+      "Howzit",
+      "What's up?",
+      "Yo",
+      "How goes it?"
+    ]
+    welcomes.sample
+  end
+
 end
