@@ -5,9 +5,7 @@
     <h2>Your lists</h2>
 
   <% if @lists.any? %>
-    <% @lists.each do |list| %>
-      <%= render'single_list', list: list %>
-    <% end %>
+      <%= render @lists %>
   <% else %>
     <p class="no-data">You haven’t created any lists yet</p>
   <% end %>

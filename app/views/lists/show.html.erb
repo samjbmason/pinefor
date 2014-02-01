@@ -24,9 +24,7 @@
   <section class="all-gifts">
     <h2>All gifts</h2>
     <% if @gifts.any? %>
-      <% @gifts.each do |gift| %>
-        <%= render'gifts/single_gift', gift: gift  %>
-      <% end %>
+        <%= render @gifts  %>
     <% else %>
       <p>No gifts yet</p>
     <% end %>
