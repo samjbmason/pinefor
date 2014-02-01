@@ -20,6 +20,8 @@ test:
 
 production:
   adapter: postgresql
-  database: pinefor
+  database: db
   pool: 5
   timeout: 5000
+  username: root
+  password: ueBajou5hMLNUhoG
