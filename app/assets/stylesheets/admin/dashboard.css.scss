@@ -5,6 +5,10 @@
   background: #eeeeee;
   text-align: center;
   border-radius: 2px;
+  margin-bottom: 21px;
+  @include media($mobile) {
+    @include span-columns(12);
+  }
 }
 
 .metric-row {
@@ -20,20 +24,25 @@
 
 
 .search-users {
-  margin-top: 21px;
-
   form {
     @include clearfix;
   }
   fieldset {
     float: left;
     width: 80%;
+    @include media($mobile) {
+      width: 100%;
+      margin-bottom: 13px;
+    }
     label {
       display: block;
       font-size: 13px;
     }
     input {
       width: 80%;
+      @include media($mobile) {
+        width: 100%;
+      }
     }
   }
   input[type="submit"] {
@@ -44,6 +53,9 @@
 
 .search-results {
   margin-top: 13px;
+  @include media($mobile) {
+    text-align: center;
+  }
   .search-user-result {
     padding-top: 18px;
     border-top: 2px solid #eeeeee;

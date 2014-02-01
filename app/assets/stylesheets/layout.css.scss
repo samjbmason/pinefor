@@ -34,7 +34,7 @@ header {
   background: #4C5364;
   .container {
     height: 56px;
-    @include media($mobile) {
+    @include media($tablet) {
       height: auto;
       text-align: center;
     }
@@ -43,7 +43,7 @@ header {
 
 .site-nav {
   float: right;
-  @include media($mobile) {
+  @include media($tablet) {
     float: none;
   }
 
@@ -53,13 +53,11 @@ header {
     text-transform: lowercase;
     font-weight: 400;
     display: inline;
-    @include media($mobile) {
+    @include media($tablet) {
       line-height: 1.4;
       display: block;
       margin-left: 0;
-      &:first-child {
-        margin-bottom: 11px;
-      }
+      margin-top: 11px;
     }
 
     &.btn-primary:hover {
