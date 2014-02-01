@@ -1,5 +1,4 @@
 class Gift < ActiveRecord::Base
-  belongs_to :list, dependent: :destroy, counter_cache: true
   belongs_to :user
 
   validates :name, presence: true
