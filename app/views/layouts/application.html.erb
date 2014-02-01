@@ -25,7 +25,7 @@
 
   <%= render'layouts/footer' %>
 
-  <%= render'layouts/analytics' %>
+  <%= render'layouts/analytics' if Rails.env.production? %>
 
 </body>
 </html>
