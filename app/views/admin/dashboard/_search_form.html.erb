@@ -1,0 +1,7 @@
+<%= form_tag "/admin", method: "GET" do %>
+  <fieldset>
+    <%= label_tag :user_email, "User Email:" %>
+    <%= text_field_tag :user_email %>
+  </fieldset>
+  <%= submit_tag "Submit", class: "btn btn-primary" %>
+<% end %>
