@@ -10,6 +10,8 @@ Pinefor::Application.routes.draw do
   end
 
   namespace :admin do
+    get '', to: 'dashboard#index', as: '/'
+  end
 
   resources :lists do
     resources :gifts
