@@ -11,6 +11,7 @@ Pinefor::Application.routes.draw do
 
   namespace :admin do
     get '', to: 'dashboard#index', as: '/'
+    resources :users, only: [:destroy]
   end
 
   resources :lists do
