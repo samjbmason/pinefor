@@ -1,0 +1,31 @@
+<section class="content-container">
+  <div class="metric-row">
+    <div class="user-count">
+      <p>No. of users: <span class="no-of-users"><%= @user_count %></span></p>
+    </div> <!--  .user_count -->
+
+    <div class="latest-user">
+      <p>Latest user: <span class="latest-user-details"><a href="mailto:<%= @latest_user.email %>"><%= @latest_user.full_name %></a></p>
+    </div> <!--  .latest-user -->
+  </div> <!--  .metric-row -->
+
+  <div class="search-users">
+    <%= render "search_form" %>
+
+    <% if @users %>
+    <div class="search-results">
+
+      <% if @users.present? %>
+      <p>Found <%= pluralize(@users.count, "user") %> with the email <%= params[:user_email] %></p>
+      <% @users.each do |user| %>
+        <%= render "user", user: user %>
+      <% end %>
+      <% else %>
+        <p>No users found</p>
+      <% end %>
+
+    </div> <!--  .search-results -->
+    <% end %>
+
+  </div> <!--  .search-users -->
+</section> <!--  .content-container -->

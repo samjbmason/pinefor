@@ -1,0 +1,51 @@
+.user-count,
+.latest-user {
+  @include span-columns(6);
+  padding-top: 18px;
+  background: #eeeeee;
+  text-align: center;
+  border-radius: 2px;
+}
+
+.metric-row {
+  @include row;
+}
+
+.no-of-users,
+.latest-user-details {
+  display: block;
+  font-size: 21px;
+  color: $primary-c;
+}
+
+
+.search-users {
+  margin-top: 21px;
+
+  form {
+    @include clearfix;
+  }
+  fieldset {
+    float: left;
+    width: 80%;
+    label {
+      display: block;
+      font-size: 13px;
+    }
+    input {
+      width: 100%;
+    }
+  }
+  input[type="submit"] {
+    float: right;
+    width: 20%;
+  }
+}
+
+.search-results {
+  margin-top: 13px;
+  .search-user-result {
+    padding-top: 18px;
+    border-top: 2px solid #eeeeee;
+  }
+}

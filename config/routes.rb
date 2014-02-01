@@ -9,6 +9,8 @@ Pinefor::Application.routes.draw do
     get '/lists', to: redirect('/')
   end
 
+  namespace :admin do
+
   resources :lists do
     resources :gifts
   end
