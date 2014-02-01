@@ -11,6 +11,7 @@ end
 group :production do
  # Use postgres in production
  gem 'pg'
+ gem 'rails_12factor'
 end
 
 # Use SCSS for stylesheets
