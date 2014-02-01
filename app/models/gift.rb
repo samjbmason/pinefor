@@ -1,4 +1,5 @@
 class Gift < ActiveRecord::Base
+  belongs_to :list, counter_cache: true, touch: true
   belongs_to :user
 
   validates :name, presence: true
