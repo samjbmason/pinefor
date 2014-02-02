@@ -136,6 +136,10 @@ footer {
       &.icon-twitter {
         font-size: 1.3em;
       }
+      &.icon-alert:before {
+        font-size: 1.3em;
+        color: #F06050;
+      }
     }
     @include media($mobile) {
       text-align: center;

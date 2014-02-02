@@ -25,13 +25,15 @@
   transition: color 0.2s ease-in;
 }
 
-.icon-gift:before { content: '\e801'; }
-.icon-heart:before { content: '\e805'; }
-.icon-check:before { content: '\e804'; }
-.icon-delete:before { content: '\e802'; }
 .icon-link:before { content: '\e800'; }
+.icon-gift:before { content: '\e801'; }
+.icon-delete:before { content: '\e802'; }
 .icon-edit:before { content: '\e803'; }
+.icon-check:before { content: '\e804'; }
+.icon-heart:before { content: '\e805'; }
+.icon-alert:before { content: '\e806'; }
 .icon-twitter:before { content: '\e807'; }
+
 
 .larger-icons {
   font-size: 1.5em;
