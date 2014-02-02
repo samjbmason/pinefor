@@ -20,6 +20,8 @@ Pinefor::Application.routes.draw do
 
   devise_for :users, :path => ''
 
+  get 'about', to: 'pages#about'
+
   root 'pages#welcome'
 
   match ':status', to: 'errors#show', constraints: {status: /\d{3}/ }, via: :all

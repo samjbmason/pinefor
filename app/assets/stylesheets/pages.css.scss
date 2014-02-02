@@ -44,3 +44,26 @@
     margin-bottom: 11px;
   }
 }
+
+/* ==========================================================================
+   About styles
+   ========================================================================== */
+.about-copy {
+  @include span-columns(12);
+  a {
+    text-decoration: underline;
+  }
+}
+
+.about-me {
+  margin-top: 47px;
+  h2 {
+    margin-bottom: 6px;
+  }
+}
+.me {
+  float: left;
+  max-width: 123px;
+  padding-right: 13px;
+  border-radius: 50%;
+}
