@@ -1,5 +1,5 @@
 .hero {
-  background: url(image-path("hero10.jpg")) no-repeat center;
+  background: asset-data-url("hero10.jpg") no-repeat center;
   background-size: cover;
   min-height: 400px;
   padding: 60px 0;
