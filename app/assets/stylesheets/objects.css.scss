@@ -79,6 +79,11 @@ input[type="checkbox"] {
   }
 }
 
+.devise_form_errors {
+  color: $warning-c;
+  margin-bottom: 11px;
+}
+
 
 /* ==========================================================================
    Edit forms
