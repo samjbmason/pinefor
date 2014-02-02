@@ -1,6 +1,11 @@
 <footer>
   <div class="container">
     <p class="made-by">Made with <i class="icon-heart"></i> in London by Sam Mason</p> <!--  .made-by -->
-    <small>&copy;Pinefor <%= Time.now.year %></small>
+
+    <div class="footer-links">
+      <a href="http://twitter.com/pineforit" class="icon-twitter"></a>
+      <%= link_to "about", about_path %>
+      <small>&copy;Pinefor <%= Time.now.year %></small>
+    </div> <!--  .footer-links -->
   </div> <!--  .container -->
 </footer>

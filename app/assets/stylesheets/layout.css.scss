@@ -121,16 +121,29 @@ footer {
   }
 
   .made-by {
-    float: left;
+    @include span-columns(6);
     @include media($mobile) {
-      float: none;
+      @include span-columns(12);
       margin-bottom: 5px;
     }
   }
-  small {
-    float: right;
+  .footer-links {
+    @include span-columns(6);
+    text-align: right;
+    a {
+      @include inline-block;
+      margin-right: 11px;
+      &.icon-twitter {
+        font-size: 1.3em;
+      }
+    }
     @include media($mobile) {
-      float: none;
+      text-align: center;
+      @include span-columns(12);
+      small {
+        margin-top: 5px;
+        display: block;
+      }
     }
   }
 }
