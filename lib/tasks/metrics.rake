@@ -1,4 +1,5 @@
 namespace :metrics do
+
   desc "Fetch users count"
   task :fetch_user_count => :environment do
     users = User.count
@@ -10,4 +11,5 @@ namespace :metrics do
       puts "There was an error! - #{@error}"
     end
   end
+
 end
