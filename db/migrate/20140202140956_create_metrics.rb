@@ -2,7 +2,7 @@ class CreateMetrics < ActiveRecord::Migration
   def change
     create_table :metrics do |t|
       t.integer :value
-      t.string :type
+      t.string :name
 
       t.timestamps
     end

@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20140202140956) do
 
   create_table "metrics", force: true do |t|
     t.integer  "value"
-    t.string   "type"
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
