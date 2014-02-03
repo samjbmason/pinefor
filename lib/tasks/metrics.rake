@@ -1,7 +1,7 @@
 namespace :metrics do
 
   desc "Fetch users count"
-  task :fetch_user_count => :environment do
+  task fetch_user_count: :environment do
     users = User.count
     @metric = Metric.new({ name: "user_count", value: users })
     if @metric.save

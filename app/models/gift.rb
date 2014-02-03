@@ -6,6 +6,7 @@ class Gift < ActiveRecord::Base
   validates :link, presence: true
 
   before_save :add_link_protocol
+  after_destroy :send_deleted_notification
 
 
   # This is a helper that adds http:// to link if one doesnt exist
@@ -21,5 +22,10 @@ class Gift < ActiveRecord::Base
       uri = URI.parse(self.link)
       uri.host
     end
+  end
+
+  # Send delete notification to user
+  def send_deleted_notification
+    GiftMailer.deleted_notification(self).deliver if self.user.present?
   end
 end

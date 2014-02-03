@@ -77,4 +77,15 @@ Pinefor::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+  # Configuration for actionMailer
+  config.action_mailer.smtp_settings = {
+    :address                => "smtp.mandrillapp.com",
+    :port                   => 587,
+    :enable_starttls_auto   => true, # detects and uses STARTTLS
+    :user_name              => "sam.jbmason@gmail.com",
+    :password               => "KhN0ocRGZM04bWqCuOvp-Q", # SMTP password is any valid API key
+    :authentication         => 'login', # Mandrill supports 'plain' or 'login'
+    :domain                 => 'pinefor.it', # your domain to identify your server when connecting
+  }
 end
