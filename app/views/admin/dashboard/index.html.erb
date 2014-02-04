@@ -1,12 +1,19 @@
 <section class="content-container">
   <div class="metric-row">
     <div class="user-count">
-      <p>No. of users: <span class="no-of-users"><%= @user_count %></span></p>
+      <p>No. of users: <span class="no-of-users <%= @increase_class %>"><%= @current_user_count %></span></p>
     </div> <!--  .user_count -->
 
     <div class="latest-user">
-      <p>Latest user: <span class="latest-user-details"><a href="mailto:<%= @latest_user.email %>"><%= @latest_user.full_name %></a></p>
+      <p>Latest user: <span class="latest-user-details"><a href="mailto:<%= @newest_user.email %>"><%= @newest_user.full_name %></a></p>
     </div> <!--  .latest-user -->
+  </div> <!--  .metric-row -->
+
+  <div class="metric-row">
+    <div class="chart">
+      <p>Last 2 months of signups:</p>
+      <canvas id="weekly-users-chart"width="720" height="300"></canvas>
+    </div> <!--  .chart -->
   </div> <!--  .metric-row -->
 
   <div class="search-users">
@@ -29,3 +36,23 @@
 
   </div> <!--  .search-users -->
 </section> <!--  .content-container -->
+
+<script>
+$(document).on("ready page:load", function() {
+
+  data = {
+    labels: ["8 weeks ago", "7 weeks ago", "6 weeks ago", "5 weeks ago", "4 weeks ago", "3 weeks ago", "2 weeks ago", "1 week ago"],
+    datasets: [
+      {
+        fillColor: "rgba(151,187,205,0.5)",
+        strokeColor: "rgba(151,187,205,1)",
+        pointColor: "rgba(151,187,205,1)",
+        pointStrokeColor: "#fff",
+        data: <%= @values %>
+      }
+    ]
+  };
+  ctx = document.getElementById("weekly-users-chart").getContext("2d");
+  weeklyUsers = new Chart(ctx).Line(data, {animation: false});
+});
+</script>

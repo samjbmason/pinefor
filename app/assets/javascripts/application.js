@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require parsley
+//= require chart
 //= require_tree .
