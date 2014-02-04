@@ -21,10 +21,10 @@ end
 gem 'sass-rails', '~> 4.0.0'
 
 # Sass Mixin library
-gem 'bourbon'
+gem 'bourbon', '~> 3.1.8'
 
 # Sass grid system
-gem 'neat'
+gem 'neat', '~> 1.5.0'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -42,19 +42,19 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 # User Authentication
-gem 'devise'
+gem 'devise', '~> 3.2.2'
 
 # Natural Dates
-gem 'chronic'
+gem 'chronic', '~> 0.10.2'
 
 # For nice cron jobs
-gem 'whenever', :require => false
+gem 'whenever', '~> 0.9.0', require: false
 
 # Email Style inliner
-gem 'premailer-rails'
+gem 'premailer-rails', '~> 1.3.2'
 
 # Parses html docs
-gem 'nokogiri'
+gem 'nokogiri', '~> 1.6.1'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
