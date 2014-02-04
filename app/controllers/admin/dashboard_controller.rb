@@ -6,8 +6,9 @@ class Admin::DashboardController < ApplicationController
       @users = User.where("email = :user_email", {user_email: params[:user_email]})
     end
 
-    @user_count = User.count
-    @latest_user = User.last
+    @user = User
+    @current_user_count = @user.count
+    @newest_user = @user.last
 
     # Creates empty array that matches number of marks on chart
     value_array = Array.new(8).fill(0)

@@ -1,11 +1,11 @@
 <section class="content-container">
   <div class="metric-row">
     <div class="user-count">
-      <p>No. of users: <span class="no-of-users"><%= @user_count %></span></p>
+      <p>No. of users: <span class="no-of-users <%= @increase_class %>"><%= @current_user_count %></span></p>
     </div> <!--  .user_count -->
 
     <div class="latest-user">
-      <p>Latest user: <span class="latest-user-details"><a href="mailto:<%= @latest_user.email %>"><%= @latest_user.full_name %></a></p>
+      <p>Latest user: <span class="latest-user-details"><a href="mailto:<%= @newest_user.email %>"><%= @newest_user.full_name %></a></p>
     </div> <!--  .latest-user -->
   </div> <!--  .metric-row -->
 
