@@ -8,7 +8,7 @@
       <i class="icon-link"></i>
     <% end %>
 
-    <%= link_to '', public_gift_update_path(@list.public_hash, gift.id), class: 'gift-meta icon-check larger-icons js-mark-gift', method: :put %>
+    <%= link_to '', public_gift_update_path(@list.public_hash, gift.id), class: 'gift-meta icon-check larger-icons js-mark-gift js-mark-gift--buy', method: :put %>
     <span class="icon-desc">Mark this gift as bought</span>
 
   <% elsif gift.user == current_user # User is buying this gift %>
@@ -18,7 +18,7 @@
       <i class="icon-link"></i>
     <% end %>
 
-    <%= link_to '', public_gift_update_path(@list.public_hash, gift.id), class: 'gift-meta icon-delete larger-icons js-mark-gift', method: :put %>
+    <%= link_to '', public_gift_update_path(@list.public_hash, gift.id), class: 'gift-meta icon-delete larger-icons js-mark-gift js-mark-gift--remove', method: :put %>
     <span class="icon-desc">Don't buy this gift anymore</span>
 
   <% else # Another user is buying this gift %>
