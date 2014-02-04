@@ -51,7 +51,7 @@ gem 'chronic', '~> 0.10.2'
 gem 'whenever', '~> 0.9.0', require: false
 
 # Email Style inliner
-gem 'premailer-rails', '~> 1.3.2'
+gem 'premailer-rails', '~> 1.6.1'
 
 # Parses html docs
 gem 'nokogiri', '~> 1.6.1'
