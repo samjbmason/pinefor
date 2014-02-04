@@ -1,8 +1,27 @@
 .hero {
-  background: asset-data-url("hero10.jpg") no-repeat center;
+  background-image: asset-data-url("hero10.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
   background-size: cover;
   min-height: 400px;
   padding: 60px 0;
+  transition: background 0.8s ease-in;
+  &.focus1 {
+    background-image: asset-data-url("focus-1.jpg");
+  }
+  &.focus2 {
+    background-image: asset-data-url("focus-2.jpg");
+  }
+  &.focus3 {
+    background-image: asset-data-url("focus-3.jpg");
+  }
+  &.focus4 {
+    background-image: asset-data-url("focus-4.jpg");
+  }
+  &.focus5 {
+    background-image: asset-data-url("focus-5.jpg");
+  }
+
 }
 
 .hero-text {
