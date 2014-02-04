@@ -1,6 +1,10 @@
 <section class="content-container list-not-found">
   <h2><strong>Sorry</strong>, it looks like this list has been deleted. But while you're here why not start creating your own <a href="/"><span class="logo-text">Pine<span>for</span></span></a> lists.</h2>
 
+  <% if user_signed_in? %>
+  <%= link_to "Create a list", root_path, class: "btn btn-primary" %>
+  <% else %>
   <%= link_to "Sign up", new_user_registration_path, class: "btn btn-success" %>
   <%= link_to 'Sign in', new_user_session_path, class: "btn btn-primary"  %>
+  <% end %>
 </section> <!--  .content-container -->
