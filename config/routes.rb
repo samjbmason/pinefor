@@ -18,7 +18,7 @@ Pinefor::Application.routes.draw do
     resources :gifts
   end
 
-  devise_for :users, :path => ''
+  devise_for :users, :path => '', :path_names => {sign_in: 'signin', sign_out: 'signout', sign_up: 'signup'}
 
   get 'about', to: 'pages#about'
 
