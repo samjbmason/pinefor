@@ -22,6 +22,20 @@
   color: $primary-c;
 }
 
+.less-users {
+  color: $warning-c;
+  &:before {
+    content: '\25BC';
+  }
+}
+
+.more-users {
+  color: $success-c;
+  &:before {
+    content: '\25B2';
+  }
+}
+
 
 .search-users {
   form {
@@ -60,4 +74,20 @@
     padding-top: 18px;
     border-top: 2px solid #eeeeee;
   }
+}
+
+
+/* ==========================================================================
+   Charts
+   ========================================================================== */
+.chart {
+  margin-bottom: 18px;
+  padding-bottom: 18px;
+  border-bottom: 2px solid #eeeeee;
+}
+
+#weekly-users-chart {
+  width: 100% !important;
+  max-width: 720px;
+  height: auto !important;
 }

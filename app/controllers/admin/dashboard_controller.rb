@@ -10,6 +10,8 @@ class Admin::DashboardController < ApplicationController
     @current_user_count = @user.count
     @newest_user = @user.last
 
+    @increase_class =  @current_user_count > Metric.user_count.order(:created_at).last.value ? "more-users" : "less-users"
+
     # Creates empty array that matches number of marks on chart
     value_array = Array.new(8).fill(0)
     # Fetches 8 metric records and order them old -> new
