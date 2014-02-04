@@ -79,9 +79,9 @@ GEM
     premailer (1.8.0)
       css_parser (>= 1.3.5)
       htmlentities (>= 4.0.0)
-    premailer-rails (1.6.1)
-      actionmailer (>= 3, < 5)
-      premailer (~> 1.7, >= 1.7.9)
+    premailer-rails (1.3.2)
+      premailer (~> 1.7)
+      rails (>= 3)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -147,16 +147,16 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bourbon
-  chronic
+  bourbon (~> 3.1.8)
+  chronic (~> 0.10.2)
   coffee-rails (~> 4.0.0)
-  devise
+  devise (~> 3.2.2)
   jbuilder (~> 1.2)
   jquery-rails
-  neat
-  nokogiri
+  neat (~> 1.5.0)
+  nokogiri (~> 1.6.1)
   pg
-  premailer-rails
+  premailer-rails (~> 1.3.2)
   rails (= 4.0.2)
   rails_12factor
   sass-rails (~> 4.0.0)
@@ -164,4 +164,4 @@ DEPENDENCIES
   sqlite3
   turbolinks
   uglifier (>= 1.3.0)
-  whenever
+  whenever (~> 0.9.0)
