@@ -36,3 +36,23 @@
 
   </div> <!--  .search-users -->
 </section> <!--  .content-container -->
+
+<script>
+$(document).on("ready page:load", function() {
+
+  data = {
+    labels: ["8 weeks ago", "7 weeks ago", "6 weeks ago", "5 weeks ago", "4 weeks ago", "3 weeks ago", "2 weeks ago", "1 week ago"],
+    datasets: [
+      {
+        fillColor: "rgba(151,187,205,0.5)",
+        strokeColor: "rgba(151,187,205,1)",
+        pointColor: "rgba(151,187,205,1)",
+        pointStrokeColor: "#fff",
+        data: <%= @values %>
+      }
+    ]
+  };
+  ctx = document.getElementById("weekly-users-chart").getContext("2d");
+  weeklyUsers = new Chart(ctx).Line(data, {animation: false});
+});
+</script>
