@@ -1,4 +1,0 @@
-<%= form_for [@list, @gift], html: {class: "create-gift-form phrase-form js-validate", 'parsley-validate'=>''} do |f| %>
-    <p>I’m pining for a <%= f.text_field :name, placeholder: "Playstation 4", 'parsley-required'=>'true' %> it can be bought here <%= f.text_field :link, placeholder: "play.co.uk", 'parsley-required'=>'true' %></p>
-  <%= f.submit "Create Gift", class: "btn btn-success" %>
-<% end %>

@@ -1,1 +1,17 @@
+<% # This gets used in _gift for list#show %>
+<%= form_for [@list, gift], html: {class: "update-gift-form js-gift-edit"} do |f| %>
+  <fieldset class="inline-fields">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </fieldset>
+
+  <fieldset class="inline-fields">
+    <%= f.label :link %>
     <%= f.url_field :link %>
+  </fieldset>
+
+  <fieldset class="btn-group">
+    <%= f.submit "Update Gift", class: "btn btn-success" %>
+    <a href="#" class="btn btn-warning js-close-gift-edit">Cancel</a>
+  </fieldset>
+<% end %>
