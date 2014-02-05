@@ -1,6 +1,6 @@
 $(document).on "ready page:load", ->
   # Tracks when a user signs up
-  $("#new_user").on "submit", ->
+  $(".user-sign-up").on "submit", ->
     _gs "event", "New user has signed up"
     return
 
