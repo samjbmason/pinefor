@@ -26,7 +26,13 @@ module ApplicationHelper
       "Howzit",
       "What's up?",
       "Yo",
-      "How goes it?"
+      "How goes it?",
+      "What's up boo?",
+      "What's new?",
+      "You look great",
+      "Is that a new top?",
+      "Hey good lookin'",
+      "What's cooking"
     ]
     welcomes.sample
   end
