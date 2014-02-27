@@ -56,6 +56,9 @@ gem 'premailer-rails', '~> 1.6.1'
 # Parses html docs
 gem 'nokogiri', '~> 1.6.1'
 
+# Web server
+gem 'thin'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
