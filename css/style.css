@@ -1,0 +1,59 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,600);
+
+body {
+  background: -webkit-linear-gradient(#EC6F66 10%, #F3A183 90%); /* Chrome 10+, Saf5.1+ */
+  background:    -moz-linear-gradient(#EC6F66 10%, #F3A183 90%); /* FF3.6+ */
+  background:     -ms-linear-gradient(#EC6F66 10%, #F3A183 90%); /* IE10 */
+  background:      -o-linear-gradient(#EC6F66 10%, #F3A183 90%); /* Opera 11.10+ */
+  background:         linear-gradient(#EC6F66 10%, #F3A183 90%); /* W3C */
+  font-family: "Open Sans", "Helvetica Neue", "Helvetica", sans-serif;
+  font-size: 18px;
+  line-height: 1.4;
+  color: #ffffff;
+  font-weight: 300;
+}
+
+section {
+  margin: 0 auto;
+  max-width: 720px;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: 600;
+  text-align: center;
+  margin: 30px;
+}
+
+p {
+  margin: 20px 0;
+}
+
+a {
+  font-weight: 600;
+  color: inherit;
+}
+
+.logo-container {
+
+  text-align: center;
+}
+
+.logo {
+  width: 80px;
+  margin-right: 20px;
+}
+
+.text-logo {
+  width: 180px;
+}
+
+time, strong {
+  font-weight: 600;
+}
+
+
+@media screen and (max-width: 720px) {
+
+}
